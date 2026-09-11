@@ -1,0 +1,139 @@
+{
+  "browser": "151.0.7922.34",
+  "protocol": "file:",
+  "network": "offline",
+  "states": [
+    {
+      "name": "sidebar-desktop",
+      "layout": "sidebar",
+      "viewport": {
+        "width": 1280,
+        "height": 900,
+        "dpr": 1
+      },
+      "documentWidth": 1265,
+      "stylesheets": [
+        {
+          "href": "vendor/tabler-1.5.0.min.css"
+        },
+        {
+          "href": "starter.css"
+        }
+      ],
+      "tablerPrimary": "#066fd1",
+      "imageCount": 0,
+      "main": {
+        "x": 224,
+        "y": 88,
+        "width": 1041
+      },
+      "nav": {
+        "x": 0,
+        "y": 88,
+        "width": 224
+      },
+      "evidenceNavigation": "PASS",
+      "layoutSwitch": "PASS"
+    },
+    {
+      "name": "top-desktop",
+      "layout": "top",
+      "viewport": {
+        "width": 1280,
+        "height": 900,
+        "dpr": 1
+      },
+      "documentWidth": 1265,
+      "stylesheets": [
+        {
+          "href": "vendor/tabler-1.5.0.min.css"
+        },
+        {
+          "href": "starter.css"
+        }
+      ],
+      "tablerPrimary": "#066fd1",
+      "imageCount": 0,
+      "main": {
+        "x": 22.5,
+        "y": 159,
+        "width": 1220
+      },
+      "nav": {
+        "x": 0,
+        "y": 88,
+        "width": 1265
+      },
+      "evidenceNavigation": "PASS",
+      "layoutSwitch": "PASS"
+    },
+    {
+      "name": "sidebar-mobile",
+      "layout": "sidebar",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "documentWidth": 375,
+      "stylesheets": [
+        {
+          "href": "vendor/tabler-1.5.0.min.css"
+        },
+        {
+          "href": "starter.css"
+        }
+      ],
+      "tablerPrimary": "#066fd1",
+      "imageCount": 0,
+      "main": {
+        "x": 0,
+        "y": 186,
+        "width": 375
+      },
+      "nav": {
+        "x": 0,
+        "y": 119,
+        "width": 375
+      },
+      "evidenceNavigation": "PASS",
+      "layoutSwitch": "PASS"
+    },
+    {
+      "name": "top-mobile",
+      "layout": "top",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "documentWidth": 375,
+      "stylesheets": [
+        {
+          "href": "vendor/tabler-1.5.0.min.css"
+        },
+        {
+          "href": "starter.css"
+        }
+      ],
+      "tablerPrimary": "#066fd1",
+      "imageCount": 0,
+      "main": {
+        "x": 0,
+        "y": 186,
+        "width": 375
+      },
+      "nav": {
+        "x": 0,
+        "y": 119,
+        "width": 375
+      },
+      "evidenceNavigation": "PASS",
+      "layoutSwitch": "PASS"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "result": "PASS",
+  "publicationNote": "Historical browser evidence. Machine-specific stylesheet URLs have been replaced by paths relative to the template root; measurements are unchanged."
+}
