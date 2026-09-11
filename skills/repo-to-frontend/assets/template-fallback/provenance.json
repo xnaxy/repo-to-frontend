@@ -1,0 +1,31 @@
+{
+  "project": "Tabler",
+  "package": "@tabler/core",
+  "version": "1.5.0",
+  "acquired_date": "2026-09-08",
+  "release": "https://github.com/tabler/tabler/releases/tag/%40tabler/core%401.5.0",
+  "release_commit": "562c5972d15abb9c763c4e0216468f9b54bc0c53",
+  "license": "MIT",
+  "files": {
+    "css": {
+      "path": "vendor/tabler-1.5.0.min.css",
+      "url": "https://cdn.jsdelivr.net/npm/@tabler/core@1.5.0/dist/css/tabler.min.css",
+      "bytes": 691465,
+      "sha256": "4cdeade29286540dff94acfeb6ea9ea6a16bad4a64ff5604f659414b7c954cd5",
+      "modified": false
+    },
+    "license": {
+      "path": "vendor/LICENSE.tabler",
+      "url": "https://raw.githubusercontent.com/tabler/tabler/562c5972d15abb9c763c4e0216468f9b54bc0c53/LICENSE",
+      "bytes": 1090,
+      "sha256": "4f88a82d13be3c5c63a12c5631eae914aa4381b6dc17641bf1ab85f3f8f6c8a5",
+      "modified": false
+    }
+  },
+  "notes": [
+    "The official stylesheet is preserved byte-for-byte; no CSS purging or rewriting was applied.",
+    "Only core CSS is vendored. Tabler JS, third-party chart libraries, demo images, web fonts, and source maps are not included.",
+    "starter.css and starter.js are local implementation files; example text and numbers are synthetic.",
+    "This is a template fallback, not generated-image evidence or a completed image reconstruction."
+  ]
+}

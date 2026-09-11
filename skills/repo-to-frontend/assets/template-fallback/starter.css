@@ -1,0 +1,41 @@
+/* Authored layout overrides. Official Tabler CSS remains unchanged in vendor/. */
+:root { --tblr-font-sans-serif: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+body { margin: 0; min-width: 280px; background: #f5f7fa; }
+[hidden] { display: none !important; }
+.starter-header { min-height: 88px; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: #fff; border-bottom: 1px solid var(--tblr-border-color); }
+.starter-brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { display: grid; place-items: center; width: 36px; height: 40px; border-radius: 8px; background: #eaf2fb; color: #066fd1; font-size: 20px; font-weight: 650; }
+.layout-controls { display: flex; gap: 8px; flex-wrap: wrap; }
+.starter-shell { display: grid; grid-template-columns: 224px minmax(0, 1fr); min-height: calc(100vh - 88px); }
+.starter-nav { padding: 32px 20px; background: #fff; border-right: 1px solid var(--tblr-border-color); }
+.nav-caption { padding: 0 12px; color: var(--tblr-secondary); font-size: 12px; letter-spacing: .12em; }
+.starter-nav-items { flex-direction: column; gap: 8px; }
+.starter-nav-items .nav-link { text-align: left; padding: 11px 12px; }
+.nav-footnote { margin: 34px 12px 0; font-size: 12px; color: var(--tblr-secondary); line-height: 1.8; }
+.starter-main { width: 100%; max-width: 1220px; margin: 0 auto; padding: 32px 40px; min-width: 0; outline: none; }
+.page-title { font-size: clamp(24px, 3vw, 32px); line-height: 1.35; }
+.prose { line-height: 1.85; }
+.prose p:last-child { margin-bottom: 0; }
+.major-image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 240px; padding: 28px; border: 1px dashed #aebdce; border-radius: 8px; background: #f8fafc; text-align: center; line-height: 1.8; }
+.evidence-item { padding: 16px 0; border-top: 1px solid var(--tblr-border-color); }
+.evidence-item summary { font-weight: 600; cursor: pointer; }
+.evidence-item p { padding-top: 12px; color: var(--tblr-secondary); }
+.starter-footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--tblr-secondary); font-size: 12px; padding: 4px 0 20px; }
+.skip-link { position: fixed; left: 16px; top: -100px; z-index: 1000; background: #fff; padding: 12px 16px; }
+.skip-link:focus { top: 12px; }
+body[data-layout="top"] .starter-shell { grid-template-columns: minmax(0, 1fr); }
+body[data-layout="top"] .starter-nav { padding: 14px 32px; border-right: 0; border-bottom: 1px solid var(--tblr-border-color); }
+body[data-layout="top"] .starter-nav-items { flex-direction: row; }
+body[data-layout="top"] .nav-caption, body[data-layout="top"] .nav-footnote { display: none; }
+@media (max-width: 760px) {
+  .starter-header { padding: 18px 16px; align-items: flex-start; flex-direction: column; gap: 14px; }
+  .starter-shell { grid-template-columns: minmax(0, 1fr); }
+  .starter-nav, body[data-layout="top"] .starter-nav { padding: 12px 16px; border-right: 0; border-bottom: 1px solid var(--tblr-border-color); }
+  .starter-nav-items { flex-direction: row; flex-wrap: wrap; }
+  .nav-caption, .nav-footnote { display: none; }
+  .starter-main { padding: 24px 16px; }
+  .card-header { gap: 10px; flex-wrap: wrap; }
+  .major-image-slot { min-height: 220px; padding: 20px 16px; }
+  .table-responsive { overflow-x: auto; }
+  .table { min-width: 510px; }
+}

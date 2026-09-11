@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>企业机制手册 · 离线模板示例</title>
+  <link rel="stylesheet" href="vendor/tabler-1.5.0.min.css">
+  <link rel="stylesheet" href="starter.css">
+</head>
+<body data-layout="sidebar">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <header class="starter-header">
+    <div class="starter-brand"><span class="brand-mark" aria-hidden="true">册</span><div><strong>企业机制手册</strong><span class="text-secondary d-block small">本地示例 · 模板降级预览</span></div></div>
+    <div class="layout-controls" role="group" aria-label="页面布局">
+      <button type="button" class="btn btn-sm btn-primary" data-layout-value="sidebar" aria-pressed="true">侧栏报告</button>
+      <button type="button" class="btn btn-sm" data-layout-value="top" aria-pressed="false">顶部导航</button>
+    </div>
+  </header>
+  <div class="starter-shell">
+    <nav class="starter-nav" aria-label="手册目录">
+      <p class="nav-caption">阅读目录</p>
+      <div class="nav nav-pills starter-nav-items">
+        <button type="button" class="nav-link active" data-view-value="report" aria-pressed="true" aria-controls="report-view">01　报告正文</button>
+        <button type="button" class="nav-link" data-view-value="evidence" aria-pressed="false" aria-controls="evidence-view">02　来源与证据</button>
+      </div>
+      <p class="nav-footnote">布局可以切换。<br>内容编号与来源保持对应。</p>
+    </nav>
+    <main id="main-content" class="starter-main" tabindex="-1">
+      <div class="page-header mb-4">
+        <div class="page-pretitle">LOCAL SAMPLE / 本地合成示例</div>
+        <h1 class="page-title">企业机制手册 · 示例</h1>
+        <p class="text-secondary mt-2 mb-0">以一组明确标注的示例数字，展示问题、主要图、计算表和证据怎样排在同一份报告里。</p>
+      </div>
+
+      <section id="report-view" aria-label="报告正文">
+        <div class="alert alert-info" role="note">当前内容均为本地合成示例，不对应任何真实企业。使用本模板时，请替换为已核实的项目文稿与证据。</div>
+        <article class="card mb-4" data-content-id="C01">
+          <div class="card-header"><h2 class="card-title">01 / 这个问题为什么值得解释？</h2></div>
+          <div class="card-body prose">
+            <p>收入并不等于利润。解释企业经营时，需要先对齐收入和成本的期间、单位与口径，再展示它们如何形成结果。</p>
+            <p>本例假定同一期间收入为 100、成本为 70，二者单位均为“示例单位”。因此毛利为 100 − 70 = 30。这里的数字仅用于演示页面结构，不能作为真实分析结论。</p>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-open-evidence="C01">查看 C01 的示例来源</button>
+          </div>
+        </article>
+
+        <figure class="card mb-4" aria-labelledby="major-image-title">
+          <div class="card-header"><h2 id="major-image-title" class="card-title">02 / 主要图</h2></div>
+          <div class="card-body">
+            <div class="major-image-slot" data-major-image-slot>
+              <span class="badge bg-secondary-lt mb-2">等待项目视觉材料</span>
+              <strong>尚未提供主要图</strong>
+              <p class="text-secondary mb-0">此处用于放置已有且来源明确的主要图。<br>模板没有生成示意图，也不表示按图复刻已经完成。</p>
+            </div>
+            <figcaption class="text-secondary small mt-3">接入图像时同时保留标题、图片路径与来源编号；无图状态应继续明确显示。</figcaption>
+          </div>
+        </figure>
+
+        <section class="card mb-4" aria-labelledby="table-title">
+          <div class="card-header"><h2 id="table-title" class="card-title">03 / 从输入走到结果</h2><span class="badge bg-blue-lt ms-auto">示例数据</span></div>
+          <div class="table-responsive">
+            <table id="sample-table" class="table card-table table-vcenter">
+              <caption class="visually-hidden">本地合成示例的收入、成本与毛利及对应来源。</caption>
+              <thead><tr><th scope="col">字段</th><th scope="col">示例值</th><th scope="col">口径</th><th scope="col">证据入口</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">收入</th><td>100</td><td>同一期间 / 示例单位</td><td><button type="button" class="btn btn-link btn-sm" data-open-evidence="C01">C01 · 输入</button></td></tr>
+                <tr><th scope="row">成本</th><td>70</td><td>同一期间 / 示例单位</td><td><button type="button" class="btn btn-link btn-sm" data-open-evidence="C01">C01 · 输入</button></td></tr>
+                <tr><th scope="row">毛利</th><td><strong>30</strong></td><td>100 − 70 / 示例单位</td><td><button type="button" class="btn btn-link btn-sm" data-open-evidence="C02">C02 · 计算</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="evidence-view" aria-labelledby="evidence-title" hidden>
+        <div class="card mb-4">
+          <div class="card-header"><h2 id="evidence-title" class="card-title">来源与证据</h2><span class="badge bg-yellow-lt ms-auto">本地示例</span></div>
+          <div class="card-body prose">
+            <p>这些入口展示可追溯的页面结构。替换项目内容时，保留编号，填写实际文件、行号或页面来源。</p>
+            <details id="evidence-C01" class="evidence-item"><summary>C01 / 示例输入</summary><p>来源类型：本地合成示例。收入 100、成本 70，均由本模板直接给定，未读取企业披露或外部数据。</p></details>
+            <details id="evidence-C02" class="evidence-item"><summary>C02 / 示例计算</summary><p>使用 C01 的两个输入：毛利 = 收入 − 成本 = 100 − 70 = 30。它展示从输入到结果的关系，未覆盖完整财务分析。</p></details>
+            <button type="button" class="btn btn-outline-primary mt-3" data-view-value="report">返回报告正文</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="starter-footer"><span>Tabler 1.5.0 · 本地资源</span><span>示例内容 / 图像阶段未执行</span></footer>
+      <div class="visually-hidden" role="status" aria-live="polite">当前布局：侧栏报告；当前视图：报告正文。</div>
+    </main>
+  </div>
+  <noscript><p class="alert alert-warning m-3">JavaScript 未启用：可阅读默认报告；布局切换与证据视图需要启用 JavaScript。</p></noscript>
+  <script src="starter.js"></script>
+</body>
+</html>
