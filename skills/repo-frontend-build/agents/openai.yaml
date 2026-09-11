@@ -1,0 +1,6 @@
+interface:
+  display_name: "前端复刻"
+  short_description: "独立执行前端复刻阶段，保留项目事实约束与阶段交接边界"
+  default_prompt: "使用 $repo-frontend-build 仅完成前端复刻阶段，复用已有输入并记录结果。独立子代理审查新任务默认关闭，同任务按既有设置继承，开启时遵循共享独立审查协议。"
+policy:
+  allow_implicit_invocation: true
