@@ -1,0 +1,10 @@
+/* Configuration only: no proprietary font files are bundled. */
+.r2f-fonts {
+  --r2f-cjk: "Microsoft YaHei";
+  font-family: "Times New Roman", var(--r2f-cjk), serif;
+}
+.r2f-fonts[data-r2f-cjk="heiti"] { --r2f-cjk: "SimHei"; }
+.r2f-fonts[data-r2f-cjk="kaiti"] { --r2f-cjk: "KaiTi"; }
+.r2f-fonts[data-r2f-cjk="yahei"] { --r2f-cjk: "Microsoft YaHei"; }
+.r2f-fonts[data-r2f-cjk="songti"] { --r2f-cjk: "SimSun"; }
+.r2f-fonts :where(button, input, select, textarea, svg text) { font-family: inherit; }
