@@ -1,0 +1,6 @@
+interface:
+  display_name: "仓库到前端·总入口"
+  short_description: "组合五阶段，支持可选图片审核与独立子代理审查"
+  default_prompt: "使用 $repo-to-frontend 执行本次指定阶段；图片审核默认关闭，若已开启则等待用户确认当前图片后再复刻。独立子代理审查新任务默认关闭，同任务按既有设置继承，开启时遵循共享独立审查协议。"
+policy:
+  allow_implicit_invocation: true
