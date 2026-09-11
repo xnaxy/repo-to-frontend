@@ -26,6 +26,8 @@ describe('delivery evidence cannot promote unrelated passes into faithful recons
   it('rejects missing metrics despite no overflow and working charts', () => { const x=fixture(); x.pages[0].regions.shift(); expect(checkDelivery(x,read).blockers.some(b=>b.code==='UNVERIFIED_REGION')).toBe(true); });
   it('fails chart replacement, first-screen displacement, or missing labels independently', () => { for(const dim of ['structure','coverage','appearance','content']) { const x=fixture(); x.pages[0].regions[1][dim]='FAIL'; expect(checkDelivery(x,read).status).toBe('FAIL'); } });
   it('does not forgive a P3 visual difference', () => { const x=fixture(); x.pages[0].findings=[{id:'ratio',priority:'P3',blocking:false,resolved:false}]; expect(checkDelivery(x,read).status).toBe('FAIL'); });
+  it.each([{id:'known-mismatch',resolved:false}, 'KNOWN_MISMATCH', null])('rejects malformed ordinary page findings: %j', value => { const x=fixture(); x.pages[0].findings=value; const result=checkDelivery(x,read); expect(result.status).toBe('BLOCKED'); expect(result.blockers.some(b=>b.code==='INVALID_REPORT_LIST')).toBe(true); });
+  it('keeps omitted ordinary page findings compatible', () => { const x=fixture(); delete x.pages[0].findings; expect(checkDelivery(x,read).status).toBe('PASS_SCOPED'); });
   it('keeps unknown fonts and incomplete comparison unverified', () => { const x=fixture(); x.pages[0].regions[0].appearance='UNKNOWN'; expect(checkDelivery(x,read).status).toBe('BLOCKED'); });
   it('cannot replace visual review with a functional pass', () => { const x=fixture(); delete x.pages[0].review; x.functionalTestsPassed=85; expect(checkDelivery(x,read).status).toBe('BLOCKED'); });
   it('rejects duplicate region rows and unexpected states', () => { const x=fixture(); x.pages[0].regions.push(x.pages[0].regions[0]); x.pages.push({...x.pages[0],id:'unapproved'}); expect(checkDelivery(x,read).status).toBe('BLOCKED'); });
@@ -44,4 +46,18 @@ describe('delivery evidence cannot promote unrelated passes into faithful recons
       expect(result.status).toBe(variant==='valid'?'PASS_SCOPED':'BLOCKED');
     }
   });
+  for (const field of ['blockers','differences']) {
+    it.each([{code:'KNOWN_MISMATCH'}, 'KNOWN_MISMATCH', null])(`rejects malformed strict report ${field}: %j with otherwise valid bindings`, value => {
+      const x=fixture(); x.mode='strict'; const page=x.pages[0];
+      const original={referenceImage:{sha256:sha('image')}};
+      const actual={referenceSha256:sha('image'),capture:{screenshotSha256:sha('screen')}};
+      const report={status:'PASS_CONTRACT',inputBinding:createInputBinding(original,actual),[field]:value};
+      const files={original:JSON.stringify(original),actual:JSON.stringify(actual),report:JSON.stringify(report)};
+      const entry=path=>({path,sha256:sha(files[path])});
+      Object.assign(page,{contractEvidence:entry('report'),contractReference:entry('original'),contractActual:entry('actual')});
+      const result=checkDelivery(x,path=>files[path]===undefined?read(path):Buffer.from(files[path]));
+      expect(result.status).toBe('BLOCKED');
+      expect(result.blockers.some(b=>b.code==='INVALID_REPORT_LIST')).toBe(true);
+    });
+  }
 });

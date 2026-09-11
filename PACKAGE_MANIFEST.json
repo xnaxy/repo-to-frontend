@@ -1,9 +1,79 @@
 {
-  "baseline": "3.2 with image-contract loop, verified 2026-09-10",
+  "baseline": "3.2 with dynamic-data and state-sheet optimization, verified 2026-09-11",
   "published": "2026-09-11",
-  "fileCount": 75,
-  "relativeMarkdownLinksChecked": 84,
+  "fileCount": 77,
+  "relativeMarkdownLinksChecked": 96,
   "files": [
+    {
+      "path": "skills/repo-analyze/SKILL.md",
+      "sourceSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
+      "publishedSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
+      "gitBlobSha": "39cb46cb30483e2470f1fa84adb48fcc2d9cd48c",
+      "bytes": 2779
+    },
+    {
+      "path": "skills/repo-analyze/agents/openai.yaml",
+      "sourceSha256": "c7cc4d1657b0d9801fe85f852cdf46f2246f6631e72e8a52b3a7a7db173c2458",
+      "publishedSha256": "c7cc4d1657b0d9801fe85f852cdf46f2246f6631e72e8a52b3a7a7db173c2458",
+      "gitBlobSha": "286380622d6a6f2bdef8bc8b296424bec3e5df6f",
+      "bytes": 420
+    },
+    {
+      "path": "skills/repo-design-brief/SKILL.md",
+      "sourceSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
+      "publishedSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
+      "gitBlobSha": "3b5b61dad886bc7ca894e070a96cddc1f166acfb",
+      "bytes": 4019
+    },
+    {
+      "path": "skills/repo-design-brief/agents/openai.yaml",
+      "sourceSha256": "0eb0dc9f4461b845b498cc10cc5a37cdb188eab317ef6c27674207c0de677bc6",
+      "publishedSha256": "0eb0dc9f4461b845b498cc10cc5a37cdb188eab317ef6c27674207c0de677bc6",
+      "gitBlobSha": "545851deb34abbcaa1dd936f25b924638b6e4d7d",
+      "bytes": 452
+    },
+    {
+      "path": "skills/repo-frontend-build/SKILL.md",
+      "sourceSha256": "4be3148c3ef43c0e31c7d1a5cd572ec89836794926595a5d262d6a65d5bc3de5",
+      "publishedSha256": "4be3148c3ef43c0e31c7d1a5cd572ec89836794926595a5d262d6a65d5bc3de5",
+      "gitBlobSha": "608d172b06150af7a29543cdc68401173a7fd8ee",
+      "bytes": 7071
+    },
+    {
+      "path": "skills/repo-frontend-build/agents/openai.yaml",
+      "sourceSha256": "d6e81977f59ef6b77ec609b98ebef1f9f27867215c65c35c092c83edc90e6b65",
+      "publishedSha256": "d6e81977f59ef6b77ec609b98ebef1f9f27867215c65c35c092c83edc90e6b65",
+      "gitBlobSha": "0c13d9fdafcd98e4a0f4fa88d1b4fcb26306b10b",
+      "bytes": 427
+    },
+    {
+      "path": "skills/repo-frontend-verify/SKILL.md",
+      "sourceSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
+      "publishedSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
+      "gitBlobSha": "2286d8092e3617a3e4fcd5551e0adc9c9cfce49b",
+      "bytes": 5684
+    },
+    {
+      "path": "skills/repo-frontend-verify/agents/openai.yaml",
+      "sourceSha256": "7f1d66c910d05b4e553bb657cfe15094ff077dcee19a928bc92d5590b9fdfb84",
+      "publishedSha256": "7f1d66c910d05b4e553bb657cfe15094ff077dcee19a928bc92d5590b9fdfb84",
+      "gitBlobSha": "457bddce9a79e40cf9d92b46a9e6f2f22088f7f9",
+      "bytes": 428
+    },
+    {
+      "path": "skills/repo-image-design/SKILL.md",
+      "sourceSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
+      "publishedSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
+      "gitBlobSha": "77af40200d000014c2c519346d455e3d7ffc85a7",
+      "bytes": 4030
+    },
+    {
+      "path": "skills/repo-image-design/agents/openai.yaml",
+      "sourceSha256": "d58f6a9b562c53d83dbb5bf38507750b8e7c0fcf55e8696d2feca43b39abee92",
+      "publishedSha256": "d58f6a9b562c53d83dbb5bf38507750b8e7c0fcf55e8696d2feca43b39abee92",
+      "gitBlobSha": "3a094649a110ba3d8cb1ed949903991d28f32bcb",
+      "bytes": 425
+    },
     {
       "path": "skills/repo-to-frontend/SKILL.md",
       "sourceSha256": "6a2cc253f6d4b42c6a6cdfe2398d01e8ef2f95b55323fe013aa8de3364e9db02",
@@ -26,242 +96,25 @@
       "bytes": 497
     },
     {
-      "path": "skills/repo-to-frontend/references/backend-integration.md",
-      "sourceSha256": "fa22d5de45a6015148ec2527ec0cc15bc41f12e1155f87d367175fddc64b2cd6",
-      "publishedSha256": "fa22d5de45a6015148ec2527ec0cc15bc41f12e1155f87d367175fddc64b2cd6",
-      "gitBlobSha": "893aaf755f173a7dc7948f20352b91c46fbb4671",
-      "bytes": 5120
-    },
-    {
-      "path": "skills/repo-to-frontend/references/chart-suite.md",
-      "sourceSha256": "98a115096e2a306c851344ee7a6671ca04262672ce6aa69c39e05d7dc8f2f8d1",
-      "publishedSha256": "98a115096e2a306c851344ee7a6671ca04262672ce6aa69c39e05d7dc8f2f8d1",
-      "gitBlobSha": "6aaa2fd2d7e90603a40f78e6e64f0afc60663105",
-      "bytes": 3369
-    },
-    {
-      "path": "skills/repo-to-frontend/references/deep-decomposition.md",
-      "sourceSha256": "cb36f1b51ad91e38c1c7fe063f21094618b2bbe1427a5e1e66a691c6ebcf71e3",
-      "publishedSha256": "cb36f1b51ad91e38c1c7fe063f21094618b2bbe1427a5e1e66a691c6ebcf71e3",
-      "gitBlobSha": "e5a800f2ccd256e555cf31e6f721aee7bfced45e",
-      "bytes": 3578
-    },
-    {
-      "path": "skills/repo-to-frontend/references/design-quality.md",
-      "sourceSha256": "81226c7c65bf8ffdd521c0c34ddd05d7e4fa74ab25a55fb41aa3bba7db4786d7",
-      "publishedSha256": "81226c7c65bf8ffdd521c0c34ddd05d7e4fa74ab25a55fb41aa3bba7db4786d7",
-      "gitBlobSha": "73c1b9e1c27fc0170c73b7aee1135ed0fd94fde0",
-      "bytes": 3907
-    },
-    {
-      "path": "skills/repo-to-frontend/references/diagram-and-chart-reconstruction.md",
-      "sourceSha256": "b4a75506a2c371bc8de7e7678ab7c9470c2b5655505078f284dc603052658cdf",
-      "publishedSha256": "b4a75506a2c371bc8de7e7678ab7c9470c2b5655505078f284dc603052658cdf",
-      "gitBlobSha": "8006a390ff360e973c89eaf0b048cb51cec7111a",
-      "bytes": 11969
-    },
-    {
-      "path": "skills/repo-to-frontend/references/font-and-raster-calibration.md",
-      "sourceSha256": "77d976706889ca25631ef8fa2e7c89e863910bdea43953a8e9b821888b03e234",
-      "publishedSha256": "77d976706889ca25631ef8fa2e7c89e863910bdea43953a8e9b821888b03e234",
-      "gitBlobSha": "e08efc67a8342e6fce19c95bfaa63ac4179a06e4",
-      "bytes": 7998
-    },
-    {
-      "path": "skills/repo-to-frontend/references/font-presets.md",
-      "sourceSha256": "de19677921584e4326ab481ed793a437b040b2d91d7b1d7363589dbae9910332",
-      "publishedSha256": "de19677921584e4326ab481ed793a437b040b2d91d7b1d7363589dbae9910332",
-      "gitBlobSha": "36ff44a3ca57bfe497a0758e3cfe518817453e0b",
-      "bytes": 3393
-    },
-    {
-      "path": "skills/repo-to-frontend/references/github-toolkit.md",
-      "sourceSha256": "3d3b8c3640146e9b3613684830be7f8f704431e32949c8c25ea2d7cb30db84d6",
-      "publishedSha256": "3d3b8c3640146e9b3613684830be7f8f704431e32949c8c25ea2d7cb30db84d6",
-      "gitBlobSha": "9696c9e9252e3ad944976a6ba71813a6d3353ec3",
-      "bytes": 9892
-    },
-    {
-      "path": "skills/repo-to-frontend/references/image-contract-loop.md",
-      "sourceSha256": "0da8ddb783be4553638195fd02fa6d805c87f227c80b0cd6203811a7d9386e82",
-      "publishedSha256": "0da8ddb783be4553638195fd02fa6d805c87f227c80b0cd6203811a7d9386e82",
-      "gitBlobSha": "8a8e2b0b1699912e9b6401b539c976ca8a018984",
-      "bytes": 8050
-    },
-    {
-      "path": "skills/repo-to-frontend/references/image-to-frontend.md",
-      "sourceSha256": "443cdac5fda975e4e87c45c3aeaab99053c78139a5e53312a2184130f83bb781",
-      "publishedSha256": "443cdac5fda975e4e87c45c3aeaab99053c78139a5e53312a2184130f83bb781",
-      "gitBlobSha": "e9faf53a5d7aefa0535576c38187c88f999e4e57",
-      "bytes": 8647
-    },
-    {
-      "path": "skills/repo-to-frontend/references/independent-review.md",
-      "sourceSha256": "4f34953f4432eacbea52cbd44f4c94ecbfb0548459550c1069f1ce2d6256bdee",
-      "publishedSha256": "4f34953f4432eacbea52cbd44f4c94ecbfb0548459550c1069f1ce2d6256bdee",
-      "gitBlobSha": "2edfa70fa7252b8cdae6a25a055d024140bbf7a6",
-      "bytes": 6755
-    },
-    {
-      "path": "skills/repo-to-frontend/references/interaction-contract.md",
-      "sourceSha256": "5200f6bc82b8ef63b443dd821a584f9d0199f4cfa3c4fdea16ecf3d73d05f4f9",
-      "publishedSha256": "5200f6bc82b8ef63b443dd821a584f9d0199f4cfa3c4fdea16ecf3d73d05f4f9",
-      "gitBlobSha": "76432f2b0d96f5502aedb7dbbd38cf7de4bea0f1",
-      "bytes": 6390
-    },
-    {
-      "path": "skills/repo-to-frontend/references/locked-image-reconstruction.md",
-      "sourceSha256": "5f8642e127458917bcdbfaa932d49cc363e74b0fab298be0abeba6a70a6ddee3",
-      "publishedSha256": "5f8642e127458917bcdbfaa932d49cc363e74b0fab298be0abeba6a70a6ddee3",
-      "gitBlobSha": "3a764b48a1a20ba4b83258d314ba2af41027443b",
-      "bytes": 10836
-    },
-    {
-      "path": "skills/repo-to-frontend/references/narrative-and-design.md",
-      "sourceSha256": "69798fef9f2b7a7904900938e7c366a908dde04c4fffa55a29b4a81fa04dfe64",
-      "publishedSha256": "69798fef9f2b7a7904900938e7c366a908dde04c4fffa55a29b4a81fa04dfe64",
-      "gitBlobSha": "ce019d41b6a1694fda3555c0d590d2d7b0ec2fdb",
-      "bytes": 3662
-    },
-    {
-      "path": "skills/repo-to-frontend/references/project-grounding.md",
-      "sourceSha256": "9f6dabebb015c2c64872f4fd33f83fd9e0a20809f21e2e0706628acd0c09ba81",
-      "publishedSha256": "9f6dabebb015c2c64872f4fd33f83fd9e0a20809f21e2e0706628acd0c09ba81",
-      "gitBlobSha": "3e0f7950f0bc7f0420ec9967f55fc1604299ef55",
-      "bytes": 9594
-    },
-    {
-      "path": "skills/repo-to-frontend/references/public-assets.md",
-      "sourceSha256": "b9f13b12573e75a16f2ddf11a3bd8d2583409784f6ae0eb4455ff5d419d22c6a",
-      "publishedSha256": "b9f13b12573e75a16f2ddf11a3bd8d2583409784f6ae0eb4455ff5d419d22c6a",
-      "gitBlobSha": "2dfa3169c7c0de20f6d2b2654a358fd3de5fef67",
-      "bytes": 4154
-    },
-    {
-      "path": "skills/repo-to-frontend/references/reference-fidelity.md",
-      "sourceSha256": "bf7618aff6fa94b84da6488e78a9764222b96bd8d1c7255297970f64c11786d3",
-      "publishedSha256": "bf7618aff6fa94b84da6488e78a9764222b96bd8d1c7255297970f64c11786d3",
-      "gitBlobSha": "16784a4aae897aa228d9af5ee47ef614f988899c",
-      "bytes": 5597
-    },
-    {
-      "path": "skills/repo-to-frontend/references/repository-reading.md",
-      "sourceSha256": "1774e2d99f27950fe260eb46dbd6cc93169d8eb1c410878594bea42312af762b",
-      "publishedSha256": "1774e2d99f27950fe260eb46dbd6cc93169d8eb1c410878594bea42312af762b",
-      "gitBlobSha": "51b81c609a9ce59f209adf4bc06fbc5d081e58e4",
-      "bytes": 3666
-    },
-    {
-      "path": "skills/repo-to-frontend/references/skill-transfer-validation.md",
-      "sourceSha256": "479ec9d9c113365c97e8723b128a90919350ad82eadd0f555e9409786524ba80",
-      "publishedSha256": "479ec9d9c113365c97e8723b128a90919350ad82eadd0f555e9409786524ba80",
-      "gitBlobSha": "3466fa4c33b069b5aef76934ae01d47d05a201ce",
-      "bytes": 10147
-    },
-    {
-      "path": "skills/repo-to-frontend/references/stage-common.md",
-      "sourceSha256": "fca444d10cf542c31192bd11f5eb946743bfbf6a7f1bba09dce9eec04de5179e",
-      "publishedSha256": "fca444d10cf542c31192bd11f5eb946743bfbf6a7f1bba09dce9eec04de5179e",
-      "gitBlobSha": "a24424763d4a8d59ea29a37ca09ef741d4d4d8c4",
-      "bytes": 4029
-    },
-    {
-      "path": "skills/repo-to-frontend/references/stage-handoff.md",
-      "sourceSha256": "2d39cde138cf7e977d018cd54534fcb79eee05d3d1e11bd6aaad6b5c3d74b35e",
-      "publishedSha256": "2d39cde138cf7e977d018cd54534fcb79eee05d3d1e11bd6aaad6b5c3d74b35e",
-      "gitBlobSha": "fc54987c3e1e721baa32aefdcc0aafb56f0b06f1",
-      "bytes": 5979
-    },
-    {
-      "path": "skills/repo-to-frontend/references/strict-replica-tools.md",
-      "sourceSha256": "18bb891b42bab9a22726c8e0ba8abe42cee1e082f07364ad55a9c8aaa0f62818",
-      "publishedSha256": "18bb891b42bab9a22726c8e0ba8abe42cee1e082f07364ad55a9c8aaa0f62818",
-      "gitBlobSha": "cd4de23a4ae040740832598f37e8f040a353cc1f",
-      "bytes": 14628
-    },
-    {
-      "path": "skills/repo-to-frontend/references/template-fallback.md",
-      "sourceSha256": "ec3020d1cfab96eb9aabf1d7bb2f351e02d487ac6b9292025e060d63adc179bb",
-      "publishedSha256": "ec3020d1cfab96eb9aabf1d7bb2f351e02d487ac6b9292025e060d63adc179bb",
-      "gitBlobSha": "25d4610d46dd366a6795c6225d48dc4072ce7757",
-      "bytes": 3973
-    },
-    {
-      "path": "skills/repo-to-frontend/references/text-frame-relations.md",
-      "sourceSha256": "e214180dc43d9273ef5212790718d9963ed7d90b9949c6e7c17f960efad5b963",
-      "publishedSha256": "e214180dc43d9273ef5212790718d9963ed7d90b9949c6e7c17f960efad5b963",
-      "gitBlobSha": "b67ed51c3c2e71bf7a22be2b3a5deea24baeb8f3",
-      "bytes": 4493
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/audit-fonts.mjs",
-      "sourceSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
-      "publishedSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
-      "gitBlobSha": "c3598517679cb37f2bbd9cef74f589dd6bf9b8e9",
-      "bytes": 5005
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/audit-image-contract.mjs",
-      "sourceSha256": "a81581d2879be4066687abc9dda73a64b0da3008c075107a2a950e9d72b278a8",
-      "publishedSha256": "a81581d2879be4066687abc9dda73a64b0da3008c075107a2a950e9d72b278a8",
-      "gitBlobSha": "24599cdb1308c53e0f2781da3b789156b146b89b",
-      "bytes": 7518
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/audit-layout-relations.mjs",
-      "sourceSha256": "5afb36a7908d94005e0e059a1729a44c02b3716bbe2afd31dbc60430611ef261",
-      "publishedSha256": "5afb36a7908d94005e0e059a1729a44c02b3716bbe2afd31dbc60430611ef261",
-      "gitBlobSha": "0b96739b56556c876fde36a12853f043b76b4f4b",
-      "bytes": 6963
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/capture-replica.mjs",
-      "sourceSha256": "666cfaceedc1e2ac9ef6d63113e6df1e814aedc2d4e79823eda80afc4208c12f",
-      "publishedSha256": "666cfaceedc1e2ac9ef6d63113e6df1e814aedc2d4e79823eda80afc4208c12f",
-      "gitBlobSha": "47c3c5402310dd19c4f9501c3d16d82686a5ab82",
-      "bytes": 18687
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/check-delivery.mjs",
-      "sourceSha256": "c545cb3d79eee18fcad70560c603d67d1bc627daecd70ec74490710b482792c6",
-      "publishedSha256": "c545cb3d79eee18fcad70560c603d67d1bc627daecd70ec74490710b482792c6",
-      "gitBlobSha": "eb5d323883f5a7198b912080bc8c670abe5e3d62",
-      "bytes": 9337
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/measure-regions.mjs",
-      "sourceSha256": "9b6d98c79598cb771dee75dfe1db3e5757cd448d2c2d98a7b444d2e6e81d6a1e",
-      "publishedSha256": "9b6d98c79598cb771dee75dfe1db3e5757cd448d2c2d98a7b444d2e6e81d6a1e",
-      "gitBlobSha": "376bed4edb4adf802e43a7e422ae1889d74246a8",
-      "bytes": 5559
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/review-replica.mjs",
-      "sourceSha256": "129072fe90f76e3246c0315cf685b079c6deff7cbf7d5956ef3368384b8ebb6b",
-      "publishedSha256": "129072fe90f76e3246c0315cf685b079c6deff7cbf7d5956ef3368384b8ebb6b",
-      "gitBlobSha": "70dedf80c8d927457dccd584f005da4c4658517e",
-      "bytes": 27538
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/verify-replica.mjs",
-      "sourceSha256": "014922adf4e78bd74b6af4e03969e844ad4db0d824adfab61de500ed15e330c7",
-      "publishedSha256": "014922adf4e78bd74b6af4e03969e844ad4db0d824adfab61de500ed15e330c7",
-      "gitBlobSha": "86678283e16089abd00be330dccc45964d3a518b",
-      "bytes": 29812
-    },
-    {
-      "path": "skills/repo-to-frontend/scripts/visual-geometry.mjs",
-      "sourceSha256": "dc4e74ad54b0480e5fe841c3f1121002e9d6b21ce4c0cf192c734c263f7c865f",
-      "publishedSha256": "dc4e74ad54b0480e5fe841c3f1121002e9d6b21ce4c0cf192c734c263f7c865f",
-      "gitBlobSha": "ea63c67526b94ad947067b0ca5ebe11471e96820",
-      "bytes": 5441
-    },
-    {
       "path": "skills/repo-to-frontend/assets/template-fallback/CHANGELOG.md",
       "sourceSha256": "d268402960143b6f8603c4594c9d5985b64368be5b9f099f5d438945c16bde0d",
       "publishedSha256": "d268402960143b6f8603c4594c9d5985b64368be5b9f099f5d438945c16bde0d",
       "gitBlobSha": "7f78a366e071bd07d6787d7b582cf6c4cbb7691f",
       "bytes": 1771
+    },
+    {
+      "path": "skills/repo-to-frontend/assets/template-fallback/README.md",
+      "sourceSha256": "f7f569031c8f3f4033245df5086f8389c853268a738bf876d6723bb869ca4949",
+      "publishedSha256": "f7f569031c8f3f4033245df5086f8389c853268a738bf876d6723bb869ca4949",
+      "gitBlobSha": "33c77748705e22de7fdc150be4d9938e785432cf",
+      "bytes": 4614
+    },
+    {
+      "path": "skills/repo-to-frontend/assets/template-fallback/VERIFICATION.md",
+      "sourceSha256": "3cb48289e6d4705da0dde050e09ba110c06c746266d8b3c8d540acf10b098cbe",
+      "publishedSha256": "3cb48289e6d4705da0dde050e09ba110c06c746266d8b3c8d540acf10b098cbe",
+      "gitBlobSha": "f0e9cfebb1529dc4aeb2f067533ae14cecd591b0",
+      "bytes": 3186
     },
     {
       "path": "skills/repo-to-frontend/assets/template-fallback/index.html",
@@ -278,11 +131,11 @@
       "bytes": 1342
     },
     {
-      "path": "skills/repo-to-frontend/assets/template-fallback/README.md",
-      "sourceSha256": "f7f569031c8f3f4033245df5086f8389c853268a738bf876d6723bb869ca4949",
-      "publishedSha256": "f7f569031c8f3f4033245df5086f8389c853268a738bf876d6723bb869ca4949",
-      "gitBlobSha": "33c77748705e22de7fdc150be4d9938e785432cf",
-      "bytes": 4614
+      "path": "skills/repo-to-frontend/assets/template-fallback/scripts/verify-browser.mjs",
+      "sourceSha256": "2ba36e44c446c4f3fa38296a68a2993a7117a7e5c32981979444ec18a1c362f7",
+      "publishedSha256": "2ba36e44c446c4f3fa38296a68a2993a7117a7e5c32981979444ec18a1c362f7",
+      "gitBlobSha": "976ff3cdbc999e6052bdaf1dfa5ada7fd0c30e3c",
+      "bytes": 4330
     },
     {
       "path": "skills/repo-to-frontend/assets/template-fallback/starter.css",
@@ -297,20 +150,6 @@
       "publishedSha256": "52d742ca03671f2e251a68599ac0dbbb4b99d1a2f3a938a9d14ce4bbfdef2ad7",
       "gitBlobSha": "198d9cb29f3f8d6a945f7c2880f1f44937d93df5",
       "bytes": 2333
-    },
-    {
-      "path": "skills/repo-to-frontend/assets/template-fallback/VERIFICATION.md",
-      "sourceSha256": "3cb48289e6d4705da0dde050e09ba110c06c746266d8b3c8d540acf10b098cbe",
-      "publishedSha256": "3cb48289e6d4705da0dde050e09ba110c06c746266d8b3c8d540acf10b098cbe",
-      "gitBlobSha": "f0e9cfebb1529dc4aeb2f067533ae14cecd591b0",
-      "bytes": 3186
-    },
-    {
-      "path": "skills/repo-to-frontend/assets/template-fallback/scripts/verify-browser.mjs",
-      "sourceSha256": "2ba36e44c446c4f3fa38296a68a2993a7117a7e5c32981979444ec18a1c362f7",
-      "publishedSha256": "2ba36e44c446c4f3fa38296a68a2993a7117a7e5c32981979444ec18a1c362f7",
-      "gitBlobSha": "976ff3cdbc999e6052bdaf1dfa5ada7fd0c30e3c",
-      "bytes": 4330
     },
     {
       "path": "skills/repo-to-frontend/assets/template-fallback/tests/starter.test.mjs",
@@ -376,6 +215,230 @@
       "bytes": 81442
     },
     {
+      "path": "skills/repo-to-frontend/references/backend-integration.md",
+      "sourceSha256": "b53a997d1f45a069d4fe47bccb5a5e93879f25617e27a3d646a846054f384347",
+      "publishedSha256": "b53a997d1f45a069d4fe47bccb5a5e93879f25617e27a3d646a846054f384347",
+      "gitBlobSha": "21fd614aaf29b839e9c37144e38be6966bb7ca86",
+      "bytes": 5351
+    },
+    {
+      "path": "skills/repo-to-frontend/references/chart-suite.md",
+      "sourceSha256": "98a115096e2a306c851344ee7a6671ca04262672ce6aa69c39e05d7dc8f2f8d1",
+      "publishedSha256": "98a115096e2a306c851344ee7a6671ca04262672ce6aa69c39e05d7dc8f2f8d1",
+      "gitBlobSha": "6aaa2fd2d7e90603a40f78e6e64f0afc60663105",
+      "bytes": 3369
+    },
+    {
+      "path": "skills/repo-to-frontend/references/data-generalization.md",
+      "sourceSha256": "8b89099a2dec1ae9e3d2b707369aacd8423ad82ddc378ead7c319c5633d25ad7",
+      "publishedSha256": "8b89099a2dec1ae9e3d2b707369aacd8423ad82ddc378ead7c319c5633d25ad7",
+      "gitBlobSha": "99f097968462abfa7bea7fa0498d92d7cd27a9ed",
+      "bytes": 8262
+    },
+    {
+      "path": "skills/repo-to-frontend/references/deep-decomposition.md",
+      "sourceSha256": "cb36f1b51ad91e38c1c7fe063f21094618b2bbe1427a5e1e66a691c6ebcf71e3",
+      "publishedSha256": "cb36f1b51ad91e38c1c7fe063f21094618b2bbe1427a5e1e66a691c6ebcf71e3",
+      "gitBlobSha": "e5a800f2ccd256e555cf31e6f721aee7bfced45e",
+      "bytes": 3578
+    },
+    {
+      "path": "skills/repo-to-frontend/references/design-quality.md",
+      "sourceSha256": "81226c7c65bf8ffdd521c0c34ddd05d7e4fa74ab25a55fb41aa3bba7db4786d7",
+      "publishedSha256": "81226c7c65bf8ffdd521c0c34ddd05d7e4fa74ab25a55fb41aa3bba7db4786d7",
+      "gitBlobSha": "73c1b9e1c27fc0170c73b7aee1135ed0fd94fde0",
+      "bytes": 3907
+    },
+    {
+      "path": "skills/repo-to-frontend/references/diagram-and-chart-reconstruction.md",
+      "sourceSha256": "b4a75506a2c371bc8de7e7678ab7c9470c2b5655505078f284dc603052658cdf",
+      "publishedSha256": "b4a75506a2c371bc8de7e7678ab7c9470c2b5655505078f284dc603052658cdf",
+      "gitBlobSha": "8006a390ff360e973c89eaf0b048cb51cec7111a",
+      "bytes": 11969
+    },
+    {
+      "path": "skills/repo-to-frontend/references/font-and-raster-calibration.md",
+      "sourceSha256": "77d976706889ca25631ef8fa2e7c89e863910bdea43953a8e9b821888b03e234",
+      "publishedSha256": "77d976706889ca25631ef8fa2e7c89e863910bdea43953a8e9b821888b03e234",
+      "gitBlobSha": "e08efc67a8342e6fce19c95bfaa63ac4179a06e4",
+      "bytes": 7998
+    },
+    {
+      "path": "skills/repo-to-frontend/references/font-presets.md",
+      "sourceSha256": "de19677921584e4326ab481ed793a437b040b2d91d7b1d7363589dbae9910332",
+      "publishedSha256": "de19677921584e4326ab481ed793a437b040b2d91d7b1d7363589dbae9910332",
+      "gitBlobSha": "36ff44a3ca57bfe497a0758e3cfe518817453e0b",
+      "bytes": 3393
+    },
+    {
+      "path": "skills/repo-to-frontend/references/github-toolkit.md",
+      "sourceSha256": "3d3b8c3640146e9b3613684830be7f8f704431e32949c8c25ea2d7cb30db84d6",
+      "publishedSha256": "3d3b8c3640146e9b3613684830be7f8f704431e32949c8c25ea2d7cb30db84d6",
+      "gitBlobSha": "9696c9e9252e3ad944976a6ba71813a6d3353ec3",
+      "bytes": 9892
+    },
+    {
+      "path": "skills/repo-to-frontend/references/image-contract-loop.md",
+      "sourceSha256": "f03f79bbbd1c582d5ca72f5925f7f5deef0315c37088cdf5ec898e0b42407b71",
+      "publishedSha256": "f03f79bbbd1c582d5ca72f5925f7f5deef0315c37088cdf5ec898e0b42407b71",
+      "gitBlobSha": "fa350f06108731734474b5858ad8c81bae25d563",
+      "bytes": 12083
+    },
+    {
+      "path": "skills/repo-to-frontend/references/image-to-frontend.md",
+      "sourceSha256": "443cdac5fda975e4e87c45c3aeaab99053c78139a5e53312a2184130f83bb781",
+      "publishedSha256": "443cdac5fda975e4e87c45c3aeaab99053c78139a5e53312a2184130f83bb781",
+      "gitBlobSha": "e9faf53a5d7aefa0535576c38187c88f999e4e57",
+      "bytes": 8647
+    },
+    {
+      "path": "skills/repo-to-frontend/references/independent-review.md",
+      "sourceSha256": "4f34953f4432eacbea52cbd44f4c94ecbfb0548459550c1069f1ce2d6256bdee",
+      "publishedSha256": "4f34953f4432eacbea52cbd44f4c94ecbfb0548459550c1069f1ce2d6256bdee",
+      "gitBlobSha": "2edfa70fa7252b8cdae6a25a055d024140bbf7a6",
+      "bytes": 6755
+    },
+    {
+      "path": "skills/repo-to-frontend/references/interaction-contract.md",
+      "sourceSha256": "5200f6bc82b8ef63b443dd821a584f9d0199f4cfa3c4fdea16ecf3d73d05f4f9",
+      "publishedSha256": "5200f6bc82b8ef63b443dd821a584f9d0199f4cfa3c4fdea16ecf3d73d05f4f9",
+      "gitBlobSha": "76432f2b0d96f5502aedb7dbbd38cf7de4bea0f1",
+      "bytes": 6390
+    },
+    {
+      "path": "skills/repo-to-frontend/references/locked-image-reconstruction.md",
+      "sourceSha256": "5108349382018db00e880f1f490bbeb6e1eb81be59409841514a8ce3da75047d",
+      "publishedSha256": "5108349382018db00e880f1f490bbeb6e1eb81be59409841514a8ce3da75047d",
+      "gitBlobSha": "92bb82b6029423c046da5d6f9d2df7df761194f8",
+      "bytes": 11025
+    },
+    {
+      "path": "skills/repo-to-frontend/references/narrative-and-design.md",
+      "sourceSha256": "69798fef9f2b7a7904900938e7c366a908dde04c4fffa55a29b4a81fa04dfe64",
+      "publishedSha256": "69798fef9f2b7a7904900938e7c366a908dde04c4fffa55a29b4a81fa04dfe64",
+      "gitBlobSha": "ce019d41b6a1694fda3555c0d590d2d7b0ec2fdb",
+      "bytes": 3662
+    },
+    {
+      "path": "skills/repo-to-frontend/references/project-grounding.md",
+      "sourceSha256": "d41fba72548242e2174b3f1cbcb7c374340aa95b83b560d7443423e20075072f",
+      "publishedSha256": "d41fba72548242e2174b3f1cbcb7c374340aa95b83b560d7443423e20075072f",
+      "gitBlobSha": "c736ab3c09d8dc6e620f2fe28e524f08a9ecfec9",
+      "bytes": 9830
+    },
+    {
+      "path": "skills/repo-to-frontend/references/public-assets.md",
+      "sourceSha256": "b9f13b12573e75a16f2ddf11a3bd8d2583409784f6ae0eb4455ff5d419d22c6a",
+      "publishedSha256": "b9f13b12573e75a16f2ddf11a3bd8d2583409784f6ae0eb4455ff5d419d22c6a",
+      "gitBlobSha": "2dfa3169c7c0de20f6d2b2654a358fd3de5fef67",
+      "bytes": 4154
+    },
+    {
+      "path": "skills/repo-to-frontend/references/reference-fidelity.md",
+      "sourceSha256": "628fbcc1d45bbbdcb2176c86e11b5fd8b213a2fddd07678d9b66a9771423bdf7",
+      "publishedSha256": "628fbcc1d45bbbdcb2176c86e11b5fd8b213a2fddd07678d9b66a9771423bdf7",
+      "gitBlobSha": "f4fb78fffe6bc23e06128a92be18ba26f6dadecb",
+      "bytes": 10913
+    },
+    {
+      "path": "skills/repo-to-frontend/references/repository-reading.md",
+      "sourceSha256": "1774e2d99f27950fe260eb46dbd6cc93169d8eb1c410878594bea42312af762b",
+      "publishedSha256": "1774e2d99f27950fe260eb46dbd6cc93169d8eb1c410878594bea42312af762b",
+      "gitBlobSha": "51b81c609a9ce59f209adf4bc06fbc5d081e58e4",
+      "bytes": 3666
+    },
+    {
+      "path": "skills/repo-to-frontend/references/skill-transfer-validation.md",
+      "sourceSha256": "479ec9d9c113365c97e8723b128a90919350ad82eadd0f555e9409786524ba80",
+      "publishedSha256": "479ec9d9c113365c97e8723b128a90919350ad82eadd0f555e9409786524ba80",
+      "gitBlobSha": "3466fa4c33b069b5aef76934ae01d47d05a201ce",
+      "bytes": 10147
+    },
+    {
+      "path": "skills/repo-to-frontend/references/stage-common.md",
+      "sourceSha256": "fca444d10cf542c31192bd11f5eb946743bfbf6a7f1bba09dce9eec04de5179e",
+      "publishedSha256": "fca444d10cf542c31192bd11f5eb946743bfbf6a7f1bba09dce9eec04de5179e",
+      "gitBlobSha": "a24424763d4a8d59ea29a37ca09ef741d4d4d8c4",
+      "bytes": 4029
+    },
+    {
+      "path": "skills/repo-to-frontend/references/stage-handoff.md",
+      "sourceSha256": "2d39cde138cf7e977d018cd54534fcb79eee05d3d1e11bd6aaad6b5c3d74b35e",
+      "publishedSha256": "2d39cde138cf7e977d018cd54534fcb79eee05d3d1e11bd6aaad6b5c3d74b35e",
+      "gitBlobSha": "fc54987c3e1e721baa32aefdcc0aafb56f0b06f1",
+      "bytes": 5979
+    },
+    {
+      "path": "skills/repo-to-frontend/references/strict-replica-tools.md",
+      "sourceSha256": "18bb891b42bab9a22726c8e0ba8abe42cee1e082f07364ad55a9c8aaa0f62818",
+      "publishedSha256": "18bb891b42bab9a22726c8e0ba8abe42cee1e082f07364ad55a9c8aaa0f62818",
+      "gitBlobSha": "cd4de23a4ae040740832598f37e8f040a353cc1f",
+      "bytes": 14628
+    },
+    {
+      "path": "skills/repo-to-frontend/references/template-fallback.md",
+      "sourceSha256": "ec3020d1cfab96eb9aabf1d7bb2f351e02d487ac6b9292025e060d63adc179bb",
+      "publishedSha256": "ec3020d1cfab96eb9aabf1d7bb2f351e02d487ac6b9292025e060d63adc179bb",
+      "gitBlobSha": "25d4610d46dd366a6795c6225d48dc4072ce7757",
+      "bytes": 3973
+    },
+    {
+      "path": "skills/repo-to-frontend/references/text-frame-relations.md",
+      "sourceSha256": "e214180dc43d9273ef5212790718d9963ed7d90b9949c6e7c17f960efad5b963",
+      "publishedSha256": "e214180dc43d9273ef5212790718d9963ed7d90b9949c6e7c17f960efad5b963",
+      "gitBlobSha": "b67ed51c3c2e71bf7a22be2b3a5deea24baeb8f3",
+      "bytes": 4493
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/audit-fonts.mjs",
+      "sourceSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
+      "publishedSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
+      "gitBlobSha": "c3598517679cb37f2bbd9cef74f589dd6bf9b8e9",
+      "bytes": 5005
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/audit-image-contract.mjs",
+      "sourceSha256": "9de6bc12241d00ec2d5862bb74888864b80d0321ba78ace7a5cbf5d0ce38bb30",
+      "publishedSha256": "9de6bc12241d00ec2d5862bb74888864b80d0321ba78ace7a5cbf5d0ce38bb30",
+      "gitBlobSha": "15c3b4512af6d264a2894f8db6c26425d26c67f1",
+      "bytes": 10923
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/audit-layout-relations.mjs",
+      "sourceSha256": "5afb36a7908d94005e0e059a1729a44c02b3716bbe2afd31dbc60430611ef261",
+      "publishedSha256": "5afb36a7908d94005e0e059a1729a44c02b3716bbe2afd31dbc60430611ef261",
+      "gitBlobSha": "0b96739b56556c876fde36a12853f043b76b4f4b",
+      "bytes": 6963
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/capture-replica.mjs",
+      "sourceSha256": "666cfaceedc1e2ac9ef6d63113e6df1e814aedc2d4e79823eda80afc4208c12f",
+      "publishedSha256": "666cfaceedc1e2ac9ef6d63113e6df1e814aedc2d4e79823eda80afc4208c12f",
+      "gitBlobSha": "47c3c5402310dd19c4f9501c3d16d82686a5ab82",
+      "bytes": 18687
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/check-delivery.mjs",
+      "sourceSha256": "1776e612723d606c57573acb66b53561b581e57a098c5b5856f7bb28169133bf",
+      "publishedSha256": "1776e612723d606c57573acb66b53561b581e57a098c5b5856f7bb28169133bf",
+      "gitBlobSha": "dcf0bf0a27b24a539c4ffb39a9300e45a041b4d2",
+      "bytes": 14699
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/measure-regions.mjs",
+      "sourceSha256": "9b6d98c79598cb771dee75dfe1db3e5757cd448d2c2d98a7b444d2e6e81d6a1e",
+      "publishedSha256": "9b6d98c79598cb771dee75dfe1db3e5757cd448d2c2d98a7b444d2e6e81d6a1e",
+      "gitBlobSha": "376bed4edb4adf802e43a7e422ae1889d74246a8",
+      "bytes": 5559
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/review-replica.mjs",
+      "sourceSha256": "129072fe90f76e3246c0315cf685b079c6deff7cbf7d5956ef3368384b8ebb6b",
+      "publishedSha256": "129072fe90f76e3246c0315cf685b079c6deff7cbf7d5956ef3368384b8ebb6b",
+      "gitBlobSha": "70dedf80c8d927457dccd584f005da4c4658517e",
+      "bytes": 27538
+    },
+    {
       "path": "skills/repo-to-frontend/scripts/tests/audit-fonts.test.mjs",
       "sourceSha256": "3162197e3ecb47c3bd2bd4570e177a5256f662aace8f5c8766a19a18b53bdf43",
       "publishedSha256": "3162197e3ecb47c3bd2bd4570e177a5256f662aace8f5c8766a19a18b53bdf43",
@@ -412,10 +475,17 @@
     },
     {
       "path": "skills/repo-to-frontend/scripts/tests/check-delivery.test.mjs",
-      "sourceSha256": "3f43763d52a012df39a671974536deea10d1482d2462e4c6b0488d9c8f7d1307",
-      "publishedSha256": "3f43763d52a012df39a671974536deea10d1482d2462e4c6b0488d9c8f7d1307",
-      "gitBlobSha": "4ac7403412521fff77d748ed77731d92743334ce",
-      "bytes": 5791
+      "sourceSha256": "82fe67ce6bc2db0fcec598fec2b1661d91f63311ccfce46a268d2f6f2fc4d8ca",
+      "publishedSha256": "82fe67ce6bc2db0fcec598fec2b1661d91f63311ccfce46a268d2f6f2fc4d8ca",
+      "gitBlobSha": "b74fa52bd3bf51244393f00fc90ed0cb275f3b52",
+      "bytes": 7372
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/tests/fixtures/image-contract.mjs",
+      "sourceSha256": "bc3cf91e4ee6045a3fa66ec67fa6916075599e86cda25b1e122b3812df5c26c6",
+      "publishedSha256": "bc3cf91e4ee6045a3fa66ec67fa6916075599e86cda25b1e122b3812df5c26c6",
+      "gitBlobSha": "28402463896c96e05253a632ada861fd326029d8",
+      "bytes": 1650
     },
     {
       "path": "skills/repo-to-frontend/scripts/tests/font-presets.test.mjs",
@@ -439,6 +509,13 @@
       "bytes": 18525
     },
     {
+      "path": "skills/repo-to-frontend/scripts/tests/state-sheet-delivery.test.mjs",
+      "sourceSha256": "7e96a399a9cc563eb19ff95520128723d8382d738e5e544d580d5e9dc0de8836",
+      "publishedSha256": "7e96a399a9cc563eb19ff95520128723d8382d738e5e544d580d5e9dc0de8836",
+      "gitBlobSha": "419d6cb565ebc0d02168ac88e6c05d7ca2354f6e",
+      "bytes": 15073
+    },
+    {
       "path": "skills/repo-to-frontend/scripts/tests/verify-replica.test.mjs",
       "sourceSha256": "acae352e79d38b04ce7ce0f634d1ca61e8d5fa2485807045a61943cb3630bf95",
       "publishedSha256": "acae352e79d38b04ce7ce0f634d1ca61e8d5fa2485807045a61943cb3630bf95",
@@ -453,81 +530,18 @@
       "bytes": 5585
     },
     {
-      "path": "skills/repo-to-frontend/scripts/tests/fixtures/image-contract.mjs",
-      "sourceSha256": "bc3cf91e4ee6045a3fa66ec67fa6916075599e86cda25b1e122b3812df5c26c6",
-      "publishedSha256": "bc3cf91e4ee6045a3fa66ec67fa6916075599e86cda25b1e122b3812df5c26c6",
-      "gitBlobSha": "28402463896c96e05253a632ada861fd326029d8",
-      "bytes": 1650
+      "path": "skills/repo-to-frontend/scripts/verify-replica.mjs",
+      "sourceSha256": "014922adf4e78bd74b6af4e03969e844ad4db0d824adfab61de500ed15e330c7",
+      "publishedSha256": "014922adf4e78bd74b6af4e03969e844ad4db0d824adfab61de500ed15e330c7",
+      "gitBlobSha": "86678283e16089abd00be330dccc45964d3a518b",
+      "bytes": 29812
     },
     {
-      "path": "skills/repo-analyze/SKILL.md",
-      "sourceSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
-      "publishedSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
-      "gitBlobSha": "39cb46cb30483e2470f1fa84adb48fcc2d9cd48c",
-      "bytes": 2779
-    },
-    {
-      "path": "skills/repo-analyze/agents/openai.yaml",
-      "sourceSha256": "c7cc4d1657b0d9801fe85f852cdf46f2246f6631e72e8a52b3a7a7db173c2458",
-      "publishedSha256": "c7cc4d1657b0d9801fe85f852cdf46f2246f6631e72e8a52b3a7a7db173c2458",
-      "gitBlobSha": "286380622d6a6f2bdef8bc8b296424bec3e5df6f",
-      "bytes": 420
-    },
-    {
-      "path": "skills/repo-design-brief/SKILL.md",
-      "sourceSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
-      "publishedSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
-      "gitBlobSha": "3b5b61dad886bc7ca894e070a96cddc1f166acfb",
-      "bytes": 4019
-    },
-    {
-      "path": "skills/repo-design-brief/agents/openai.yaml",
-      "sourceSha256": "0eb0dc9f4461b845b498cc10cc5a37cdb188eab317ef6c27674207c0de677bc6",
-      "publishedSha256": "0eb0dc9f4461b845b498cc10cc5a37cdb188eab317ef6c27674207c0de677bc6",
-      "gitBlobSha": "545851deb34abbcaa1dd936f25b924638b6e4d7d",
-      "bytes": 452
-    },
-    {
-      "path": "skills/repo-image-design/SKILL.md",
-      "sourceSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
-      "publishedSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
-      "gitBlobSha": "77af40200d000014c2c519346d455e3d7ffc85a7",
-      "bytes": 4030
-    },
-    {
-      "path": "skills/repo-image-design/agents/openai.yaml",
-      "sourceSha256": "d58f6a9b562c53d83dbb5bf38507750b8e7c0fcf55e8696d2feca43b39abee92",
-      "publishedSha256": "d58f6a9b562c53d83dbb5bf38507750b8e7c0fcf55e8696d2feca43b39abee92",
-      "gitBlobSha": "3a094649a110ba3d8cb1ed949903991d28f32bcb",
-      "bytes": 425
-    },
-    {
-      "path": "skills/repo-frontend-build/SKILL.md",
-      "sourceSha256": "53e0725e82e6ff34584220e9fc6e78f1cf72b0a60d95cea761e4ced81610e9c5",
-      "publishedSha256": "53e0725e82e6ff34584220e9fc6e78f1cf72b0a60d95cea761e4ced81610e9c5",
-      "gitBlobSha": "0a7d8b2775deb20b3bf00807f7059b6babe6736d",
-      "bytes": 6738
-    },
-    {
-      "path": "skills/repo-frontend-build/agents/openai.yaml",
-      "sourceSha256": "d6e81977f59ef6b77ec609b98ebef1f9f27867215c65c35c092c83edc90e6b65",
-      "publishedSha256": "d6e81977f59ef6b77ec609b98ebef1f9f27867215c65c35c092c83edc90e6b65",
-      "gitBlobSha": "0c13d9fdafcd98e4a0f4fa88d1b4fcb26306b10b",
-      "bytes": 427
-    },
-    {
-      "path": "skills/repo-frontend-verify/SKILL.md",
-      "sourceSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
-      "publishedSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
-      "gitBlobSha": "2286d8092e3617a3e4fcd5551e0adc9c9cfce49b",
-      "bytes": 5684
-    },
-    {
-      "path": "skills/repo-frontend-verify/agents/openai.yaml",
-      "sourceSha256": "7f1d66c910d05b4e553bb657cfe15094ff077dcee19a928bc92d5590b9fdfb84",
-      "publishedSha256": "7f1d66c910d05b4e553bb657cfe15094ff077dcee19a928bc92d5590b9fdfb84",
-      "gitBlobSha": "457bddce9a79e40cf9d92b46a9e6f2f22088f7f9",
-      "bytes": 428
+      "path": "skills/repo-to-frontend/scripts/visual-geometry.mjs",
+      "sourceSha256": "dc4e74ad54b0480e5fe841c3f1121002e9d6b21ce4c0cf192c734c263f7c865f",
+      "publishedSha256": "dc4e74ad54b0480e5fe841c3f1121002e9d6b21ce4c0cf192c734c263f7c865f",
+      "gitBlobSha": "ea63c67526b94ad947067b0ca5ebe11471e96820",
+      "bytes": 5441
     }
   ]
 }

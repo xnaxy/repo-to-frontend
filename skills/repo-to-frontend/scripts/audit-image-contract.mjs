@@ -8,6 +8,36 @@ export const digest = value => createHash('sha256').update(value).digest('hex');
 export const imageReviewContext = input => digest(JSON.stringify({contractSha256:input?.contract?.sha256,styleAnchorSha256:input?.styleAnchor?.sha256,styleInstructions:input?.styleInstructions}));
 const array = value => Array.isArray(value) ? value : [];
 const text = value => typeof value === 'string' && value.trim().length > 0;
+const positive = value => Number.isFinite(value) && value > 0;
+const names = value => Array.isArray(value) && value.length > 0 && value.every(text) && new Set(value).size === value.length;
+export const stateSheetDeclaration = value => value?.kind === 'state-sheet' ? { kind: value.kind, imageSize: value.imageSize, fragments: value.fragments } : null;
+export const validRect = (rect, size) => rect && size && ['x', 'y', 'width', 'height'].every(key => Number.isInteger(rect[key])) && rect.x >= 0 && rect.y >= 0 && rect.width > 0 && rect.height > 0 && rect.x + rect.width <= size.width && rect.y + rect.height <= size.height;
+
+// A state sheet is a physical design image, never a new product route. The
+// contract inventories its excerpts before any final screenshot is inspected.
+export function validateStateSheet(value, block, requirementIds) {
+  if (value?.kind !== 'state-sheet') {
+    if ((value?.kind !== undefined && value.kind !== 'page') || value?.fragments !== undefined) block('INVALID_REFERENCE_KIND', value?.id);
+    return;
+  }
+  const fragments = array(value.fragments), size = value.imageSize;
+  if (!size || !Number.isInteger(size.width) || !Number.isInteger(size.height) || !positive(size.width) || !positive(size.height)) block('INVALID_SHEET_SIZE', value.id);
+  if (!names(fragments.map(fragment => fragment?.id))) block('INVALID_FRAGMENT_IDS', value.id);
+  const mapped = [];
+  for (const fragment of fragments) {
+    const id = `${value.id}/${fragment?.id}`, target = fragment?.target, viewport = target?.viewport;
+    if (!validRect(fragment?.sourceRect, size)) block('INVALID_SOURCE_RECT', id);
+    if (!text(target?.pageId) || target.pageId === value.id || !text(target?.stateId) || !viewport || !Number.isInteger(viewport.width) || !Number.isInteger(viewport.height) || !positive(viewport.width) || !positive(viewport.height) || !positive(viewport.deviceScaleFactor)) block('INVALID_FRAGMENT_TARGET', id);
+    if (!names(fragment?.regions)) block('MISSING_REGION_INVENTORY', id);
+    if (!names(fragment?.requirementIds)) block('INVALID_FRAGMENT_REQUIREMENTS', id);
+    mapped.push(...array(fragment?.requirementIds));
+  }
+  if (new Set(mapped).size !== mapped.length || (requirementIds && (mapped.length !== requirementIds.length || mapped.some(id => !requirementIds.includes(id))))) block('FRAGMENT_REQUIREMENT_COVERAGE', value.id);
+  for (let i = 0; i < fragments.length; i++) for (let j = i + 1; j < fragments.length; j++) {
+    const a = fragments[i]?.sourceRect, b = fragments[j]?.sourceRect;
+    if (validRect(a, size) && validRect(b, size) && a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height) block('OVERLAPPING_SOURCE_RECTS', `${value.id}/${fragments[i].id}/${fragments[j].id}`);
+  }
+}
 export function auditImageContract(input, read = path => readFileSync(path)) {
   const blockers = [], issues = [], requirements = [];
   const block = (code, id = '') => blockers.push({ code, id });
@@ -44,6 +74,7 @@ export function auditImageContract(input, read = path => readFileSync(path)) {
     }
   }
   unique(requirements, 'id', 'requirements');
+  for (const page of pages) validateStateSheet(page, block, requirements.filter(req => req.pageId === page.id).map(req => req.id));
   const issue = (pageId, code, expected, observed = '', requirementId = null) => issues.push({ pageId, code, requirementId, expected, observed });
   for (const page of pages) {
     const image = images.find(value => value.id === page.id);
@@ -62,6 +93,11 @@ export function auditImageContract(input, read = path => readFileSync(path)) {
     for (const el of observed) {
       if (el.kind === 'decoration') continue;
       const req = requirements.find(req => req.id === el.requirementId && req.capabilityId === el.capabilityId && req.pageId === page.id);
+      if (page.kind === 'state-sheet') {
+        const fragment = array(page.fragments).find(fragment => fragment.id === el.fragmentId);
+        if (!fragment || !array(fragment.requirementIds).includes(el.requirementId) || !array(fragment.regions).includes(el.regionId)) block('INVALID_FRAGMENT_ELEMENT', el.id);
+        else if (req) Object.assign(req, { fragmentId: fragment.id, regionId: el.regionId, target: fragment.target });
+      }
       if (!req) issue(page.id, 'UNSUPPORTED_IMAGE_CONTENT', '删除无后端依据的内容，不新增接口迎合图片', el.observed ?? el.id);
       else if (el.status === 'MISMATCH' || el.kind !== req.kind) issue(page.id, 'CONTRACT_MISMATCH', req.expected, el.observed ?? '', req.id);
       else if (el.status !== 'MATCH') block('UNRESOLVED_IMAGE_CONTENT', el.id);
@@ -72,7 +108,7 @@ export function auditImageContract(input, read = path => readFileSync(path)) {
   const status = contractProblem ? 'BLOCKED_CONTRACT' : blockers.length ? 'AUDIT_INCOMPLETE' : issues.length ? 'REPAIR_IMAGES' : 'READY_FOR_REPLICA';
   return {
     schemaVersion: 1, status, inputDigest: digest(JSON.stringify(input)), contractSha256: input?.contract?.sha256,
-    images: images.map(image => ({ id: image.id, image: image.image })), requirements,
+    images: images.map(image => ({ id: image.id, image: image.image, ...stateSheetDeclaration(pages.find(page => page.id === image.id)) })), requirements,
     blockers, issues,
     feedback: {
       readyToSend: status === 'REPAIR_IMAGES',
