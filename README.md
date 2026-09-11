@@ -1,2 +1,74 @@
-# repo-to-frontend
-面向 Codex 的仓库到前端 Skill 套件：仓库解析、设计简报、参考图生成、前端复刻与验证。Six composable skills for evidence-based repository-to-frontend workflows.
+# Repo to Frontend
+
+一套面向 Codex、包含六个入口的 Skill：从仓库事实出发，整理能力合同与设计简报，生成参考图，完成前端实现，并核对视觉与功能交付。
+
+总入口负责组合五个阶段；每个阶段也可以单独调用。共享规则、检查脚本和模板集中维护，避免不同入口各自演进后产生冲突。
+
+当前公开版本基于 2026-09-10 已完成验收的 3.2 工作流及图片功能闭环修订。具体校验范围见 [发布说明](RELEASE_NOTES.md)。
+
+## 能做什么
+
+| 入口 | 用途 |
+| --- | --- |
+| `$repo-to-frontend` | 运行全流程或组合指定阶段 |
+| `$repo-analyze` | 分析仓库，输出覆盖地图与后端能力合同 |
+| `$repo-design-brief` | 根据已核实事实编写解读文稿、页面简报与交互合同 |
+| `$repo-image-design` | 生成设计参考图，交付图片及版本证据 |
+| `$repo-frontend-build` | 根据参考图实现前端并完成必要自验 |
+| `$repo-frontend-verify` | 核对已有实现与参考图、功能合同，报告差异 |
+
+## 安装
+
+下载本仓库，或克隆到自己的工作目录：
+
+```text
+git clone https://github.com/xnaxy/repo-to-frontend.git
+```
+
+将仓库 `skills/` 下的六个目录一起安装到你所用 Codex 环境的个人 Skill 目录。若该环境使用 `~/.codex/skills/`，安装后的结构为：
+
+```text
+~/.codex/skills/
+  repo-to-frontend/
+  repo-analyze/
+  repo-design-brief/
+  repo-image-design/
+  repo-frontend-build/
+  repo-frontend-verify/
+```
+
+保留目录名称和同级关系。五个阶段通过相对路径引用 `repo-to-frontend/references/`、`scripts/` 和 `assets/`，不能只复制单个 `SKILL.md`。已安装同名 Skill 时，先比较并保留自己的修改，再更新；不要直接覆盖未知改动。
+
+## 使用示例
+
+```text
+$repo-analyze 解析这个仓库，只输出覆盖地图和能力合同。
+
+$repo-to-frontend 根据已有解析结果，执行简报和生图阶段。
+
+$repo-frontend-build 使用这张参考图复刻前端，开启图片审核。
+
+$repo-frontend-verify 检查现有前端与参考图、能力合同是否一致，只报告问题。
+
+$repo-to-frontend 执行全流程，交付真实后端对接前端，开启独立子代理审查。
+```
+
+在请求中提供目标仓库或本地路径、需要的阶段、已有输入和期望交付位置。阶段组合会复用有效的上游产物，不会把“只解析”自动扩展为完整开发。
+
+## 审核与验证
+
+图片审核和独立子代理审查是两个独立开关，新任务均默认关闭；同一任务继承已有设置。开启图片审核后，必须得到用户对当前图集版本的明确同意，才进入前端实现。开启独立审查后，使用新上下文只读核对已选阶段的产物。
+
+关闭这两个开关仍需完成实现者自验。后端产品的参考图必须核对功能合同；视觉、功能、真实后端对接和安装验证分别报告。格式检查或单元测试通过不代表任意图片都能实现像素级还原。
+
+## 工具与运行环境
+
+Skill 本身由 Markdown 指令组成。分析需要读取目标仓库；生图需要当前会话提供图像生成能力；浏览器验证需要可用的浏览器工具或 Playwright 与 Chromium。
+
+附带检查脚本使用 Node.js。部分图像和页面检查依赖 `sharp`、`playwright` 或 `jsdom`，测试使用 Vitest；按具体脚本说明准备依赖。模板降级资源可离线打开，不替代实际生图结果。仓库不包含系统字体、账号凭据或远端服务授权。
+
+## 维护与许可
+
+变更应说明原因、实际改动、验证范围和已知限制。实现改动须通过最相关的定向 Vitest；修改 Skill 后检查格式、相对引用及安装文件一致性。详见 [贡献说明](CONTRIBUTING.md) 和 [第三方资源说明](THIRD_PARTY_NOTICES.md)。
+
+公开可见不自动授予全部内容的再许可。本项目自有内容尚未指定统一开源许可证；第三方文件按随附许可使用。
