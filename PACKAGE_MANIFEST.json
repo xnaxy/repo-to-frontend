@@ -1,15 +1,15 @@
 {
-  "baseline": "3.2 with dynamic-data and state-sheet optimization, verified 2026-09-11",
-  "published": "2026-09-11",
-  "fileCount": 77,
-  "relativeMarkdownLinksChecked": 96,
+  "baseline": "3.3 visual structure selection; verified 2026-09-13",
+  "published": "2026-09-13",
+  "fileCount": 81,
+  "relativeMarkdownLinksChecked": 107,
   "files": [
     {
       "path": "skills/repo-analyze/SKILL.md",
-      "sourceSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
-      "publishedSha256": "7ee0fd1205cdf2ff56b38f3a7f6a0cf64306af1d48387eae8f2022d80f1a9fcd",
-      "gitBlobSha": "39cb46cb30483e2470f1fa84adb48fcc2d9cd48c",
-      "bytes": 2779
+      "sourceSha256": "d611ad6851dcceb0616b08d6d0accf8922632ae920fe02fb1035c7034d9d2b74",
+      "publishedSha256": "d611ad6851dcceb0616b08d6d0accf8922632ae920fe02fb1035c7034d9d2b74",
+      "gitBlobSha": "e3c3eed83b5a9ad298f4a9fe8586e56c974a7432",
+      "bytes": 2782
     },
     {
       "path": "skills/repo-analyze/agents/openai.yaml",
@@ -20,10 +20,10 @@
     },
     {
       "path": "skills/repo-design-brief/SKILL.md",
-      "sourceSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
-      "publishedSha256": "fe464b915f6eb8d190f688ae5811520b54791fa8ae9e6f94cba0ff69182c8c7d",
-      "gitBlobSha": "3b5b61dad886bc7ca894e070a96cddc1f166acfb",
-      "bytes": 4019
+      "sourceSha256": "aef35ff1df6a811a57d7aa3c83cd37f1a497da7e0c8c94b5ed07d2c67e20eb16",
+      "publishedSha256": "aef35ff1df6a811a57d7aa3c83cd37f1a497da7e0c8c94b5ed07d2c67e20eb16",
+      "gitBlobSha": "90be5192fe9128aa4ce49c2e440d2eff0c140098",
+      "bytes": 4283
     },
     {
       "path": "skills/repo-design-brief/agents/openai.yaml",
@@ -34,10 +34,10 @@
     },
     {
       "path": "skills/repo-frontend-build/SKILL.md",
-      "sourceSha256": "4be3148c3ef43c0e31c7d1a5cd572ec89836794926595a5d262d6a65d5bc3de5",
-      "publishedSha256": "4be3148c3ef43c0e31c7d1a5cd572ec89836794926595a5d262d6a65d5bc3de5",
-      "gitBlobSha": "608d172b06150af7a29543cdc68401173a7fd8ee",
-      "bytes": 7071
+      "sourceSha256": "3ff29aaa2f2cb34a5f10b566591e1b9d997ac61ed6d8d717dfca4a1d309f3767",
+      "publishedSha256": "3ff29aaa2f2cb34a5f10b566591e1b9d997ac61ed6d8d717dfca4a1d309f3767",
+      "gitBlobSha": "d4609f434daa44619a99d8bca0767be4ba33e944",
+      "bytes": 7290
     },
     {
       "path": "skills/repo-frontend-build/agents/openai.yaml",
@@ -48,10 +48,10 @@
     },
     {
       "path": "skills/repo-frontend-verify/SKILL.md",
-      "sourceSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
-      "publishedSha256": "619abe801987624ea94293cad0f5559a4df4539c1f53e8fa171eaf4fc53b0f33",
-      "gitBlobSha": "2286d8092e3617a3e4fcd5551e0adc9c9cfce49b",
-      "bytes": 5684
+      "sourceSha256": "6e0de4d163eb488d9c57c26baa4b230047846f683df4565f2233916505ed1c17",
+      "publishedSha256": "6e0de4d163eb488d9c57c26baa4b230047846f683df4565f2233916505ed1c17",
+      "gitBlobSha": "579270ea7ce4fef8503fd288807f3329cfd4e83d",
+      "bytes": 5901
     },
     {
       "path": "skills/repo-frontend-verify/agents/openai.yaml",
@@ -62,10 +62,10 @@
     },
     {
       "path": "skills/repo-image-design/SKILL.md",
-      "sourceSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
-      "publishedSha256": "e23e6fb11e5b3484907f4a6580c7c1da1968b8e7ad7a7b5fd432b2cc314baeb6",
-      "gitBlobSha": "77af40200d000014c2c519346d455e3d7ffc85a7",
-      "bytes": 4030
+      "sourceSha256": "346598401d1018a35f08c1a10d9f3d5a92e48840eb8c4f1413a392c82b5a73b5",
+      "publishedSha256": "346598401d1018a35f08c1a10d9f3d5a92e48840eb8c4f1413a392c82b5a73b5",
+      "gitBlobSha": "d54f5febc8d54d5c50738d8bdeed6772441f7225",
+      "bytes": 4294
     },
     {
       "path": "skills/repo-image-design/agents/openai.yaml",
@@ -76,10 +76,10 @@
     },
     {
       "path": "skills/repo-to-frontend/SKILL.md",
-      "sourceSha256": "6a2cc253f6d4b42c6a6cdfe2398d01e8ef2f95b55323fe013aa8de3364e9db02",
-      "publishedSha256": "6a2cc253f6d4b42c6a6cdfe2398d01e8ef2f95b55323fe013aa8de3364e9db02",
-      "gitBlobSha": "0dd773eb714a2d2787005fa0c6ae827582e7b72e",
-      "bytes": 4778
+      "sourceSha256": "49035ba7b3e4c7b9bc9f24cd97268ddb5b345b6673495bb5c4161879d8bdfd2d",
+      "publishedSha256": "49035ba7b3e4c7b9bc9f24cd97268ddb5b345b6673495bb5c4161879d8bdfd2d",
+      "gitBlobSha": "ef667354a955f047fcb471034bccdfdf2f43702e",
+      "bytes": 4995
     },
     {
       "path": "skills/repo-to-frontend/agents/openai.yaml",
@@ -390,6 +390,20 @@
       "bytes": 4493
     },
     {
+      "path": "skills/repo-to-frontend/references/visual-direction.md",
+      "sourceSha256": "ace394929b1c5770969c25c4368852e908d1c0ccd0923402047afd21868e8cbf",
+      "publishedSha256": "ace394929b1c5770969c25c4368852e908d1c0ccd0923402047afd21868e8cbf",
+      "gitBlobSha": "452d87bcaeedf5f8be8666d928d9c5f9e176c1a3",
+      "bytes": 5186
+    },
+    {
+      "path": "skills/repo-to-frontend/references/visual-recipes.json",
+      "sourceSha256": "711cbc05da99d9dd32deb6c16cd313be2e029a067e75d832ba9bf5dafcaef858",
+      "publishedSha256": "711cbc05da99d9dd32deb6c16cd313be2e029a067e75d832ba9bf5dafcaef858",
+      "gitBlobSha": "ae5554b4b1e4439e5739539988a780f972d2e47c",
+      "bytes": 4614
+    },
+    {
       "path": "skills/repo-to-frontend/scripts/audit-fonts.mjs",
       "sourceSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
       "publishedSha256": "78ad525571bc4c9ae0c39a495a4f6879e6866a7f995f0da21b60f518514e36f6",
@@ -437,6 +451,13 @@
       "publishedSha256": "129072fe90f76e3246c0315cf685b079c6deff7cbf7d5956ef3368384b8ebb6b",
       "gitBlobSha": "70dedf80c8d927457dccd584f005da4c4658517e",
       "bytes": 27538
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/select-visual-recipe.mjs",
+      "sourceSha256": "d966e8b9f8fdb29c802eab79f09541f9a7c6f342a4fcd3d49d53e242741e6845",
+      "publishedSha256": "d966e8b9f8fdb29c802eab79f09541f9a7c6f342a4fcd3d49d53e242741e6845",
+      "gitBlobSha": "1c99031d99b3fa91f8904b8a9f1fa8390abd1715",
+      "bytes": 4713
     },
     {
       "path": "skills/repo-to-frontend/scripts/tests/audit-fonts.test.mjs",
@@ -507,6 +528,13 @@
       "publishedSha256": "0949b897469d420abbf6bf376405fbc8b4c99c0b6e8f2cedf06ac878c01798dd",
       "gitBlobSha": "1105428efeea468ccbb9ea030215e17fe49d471c",
       "bytes": 18525
+    },
+    {
+      "path": "skills/repo-to-frontend/scripts/tests/select-visual-recipe.test.mjs",
+      "sourceSha256": "3a2e86d6d09115ea8b6c85d73bda037975e0896d49ddda1ddb57e556ea50b55b",
+      "publishedSha256": "3a2e86d6d09115ea8b6c85d73bda037975e0896d49ddda1ddb57e556ea50b55b",
+      "gitBlobSha": "6dc55c1e4927fa8d0bdd2970baaf61e9edb58c08",
+      "bytes": 3355
     },
     {
       "path": "skills/repo-to-frontend/scripts/tests/state-sheet-delivery.test.mjs",

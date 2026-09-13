@@ -5,7 +5,7 @@ description: "Use when the user wants an end-to-end or selected-stage repository
 
 # 仓库到前端：总入口
 
-工作流版本：3.2。总入口负责选阶段、版本交接、图片审核和可选独立子代理审查；详细执行内容已拆到五个独立Skill。共享引用、脚本与素材继续由本目录维护，保留3.0项目准确性及2.9视觉能力，不复制成五套规则。
+工作流版本：3.3。总入口负责选阶段、版本交接、图片审核和可选独立子代理审查；详细执行内容已拆到五个独立Skill。共享引用、脚本与素材继续由本目录维护，保留3.0项目准确性及2.9视觉能力，不复制成五套规则。
 
 先读 [共享约束](references/stage-common.md) 和 [交接与图片审核](references/stage-handoff.md)。只加载本次需要的阶段入口及其相关引用，不把全部阶段重新塞入上下文。总入口和阶段入口可分别调用，阶段入口依赖本目录的共享资源；六个目录配套安装。
 
@@ -20,6 +20,8 @@ description: "Use when the user wants an end-to-end or selected-stage repository
 | 验收 | [$repo-frontend-verify](../repo-frontend-verify/SKILL.md) | 独立验收报告及差异证据 |
 
 ## 编排
+
+3.3在简报/生图增加按任务筛选的 [视觉结构辅助](references/visual-direction.md)，保留事实、状态与固定参考优先级；解析阶段不加载配方，复刻/验收不重新设计。
 
 后端产品全流程必读 [图片功能闭环](references/image-contract-loop.md)：完整图集双向核对后端，汇总全部问题按原风格修图并重新全检，零未决后才复刻。图像审查与最终后端覆盖均有可执行关口，不能以原图加纠错清单放行。
 

@@ -5,7 +5,7 @@ description: "Use when the user wants repository analysis, coverage auditing, or
 
 # 仓库解析
 
-版本：3.2。可单独调用，也可由 $repo-to-frontend 编排。
+版本：3.3。可单独调用，也可由 $repo-to-frontend 编排。
 
 先读 [共享约束](../repo-to-frontend/references/stage-common.md) 和 [交接与图片审核](../repo-to-frontend/references/stage-handoff.md)。仅依赖同级repo-to-frontend共享资源，不需要读取或执行总入口的其他阶段。安装时须配套该共享目录；缺失时明确报告，不能绕过审核或另造规则。
 

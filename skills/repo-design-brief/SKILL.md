@@ -5,7 +5,7 @@ description: "Use when the user wants an evidence-based narrative, page design b
 
 # 文稿与设计简报
 
-版本：3.2。可单独调用，也可由 $repo-to-frontend 编排。
+版本：3.3。可单独调用，也可由 $repo-to-frontend 编排。
 
 先读 [共享约束](../repo-to-frontend/references/stage-common.md) 和 [交接与图片审核](../repo-to-frontend/references/stage-handoff.md)。仅依赖同级repo-to-frontend共享资源，不需要读取或执行总入口的其他阶段。安装时须配套该共享目录；缺失时明确报告，不能绕过审核或另造规则。
 
@@ -16,6 +16,8 @@ description: "Use when the user wants an evidence-based narrative, page design b
 - 只执行本阶段；有现成上游输入就复用。缺失影响承诺的材料时说明缺口，不自行补造材料后继续，也不自动追加未选阶段。
 
 ## 阶段流程
+
+新设计先按 [视觉结构选型](../repo-to-frontend/references/visual-direction.md) 选择与任务匹配的结构，并记录选择依据与目录摘要；已有固定参考则保留原设计。结构建议不得缩减事实、控件或必要状态。
 
 后端产品任务按 [图片功能闭环](../repo-to-frontend/references/image-contract-loop.md) 将全部范围内可见能力和必要结果/权限状态落实到图集要求；导出image-capability-contract.json供后续双向审查，不以“以后HTML补充”省略核心功能。仅简报任务仍不追加生图。
 

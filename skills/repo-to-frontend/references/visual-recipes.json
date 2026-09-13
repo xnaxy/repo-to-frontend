@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "authorship": "本项目原创整理的结构建议；来源仅为方法参考，不复制案例提示词、图片或业务文案。未通过个别样本推定普遍视觉收益。",
+  "sources": [
+    {
+      "id": "templates",
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2/blob/main/docs/templates.md",
+      "snapshotSha256": "f8e5009821d2099da51e23ab467ec9e938fdab34856e439ac36138c155eec926",
+      "reviewed": true,
+      "scope": "本地下载快照的方法参考；链接可能演进，哈希标识阅读版本。"
+    },
+    {
+      "id": "styles",
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2/blob/main/data/style-library.json",
+      "snapshotSha256": "80f5cae039d0d6f312f0e2de2c9b3fc8a806640b0d517c120d704a71c5e4aa72",
+      "reviewed": true,
+      "scope": "本地下载快照的分类方法参考；不继承原分类准确性或第三方素材授权。"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "task-workspace",
+      "artifacts": [
+        "ui"
+      ],
+      "tasks": [
+        "operate"
+      ],
+      "densities": [
+        "medium",
+        "dense"
+      ],
+      "layout": [
+        "以当前任务、输入和结果构成主工作区，相关状态紧邻触发位置。",
+        "侧栏只承载真实导航；错误、权限和异步状态按合同展开，不强制模块数量。"
+      ],
+      "avoid": [
+        "不添加未实现的操作、进度百分比或快捷入口。"
+      ],
+      "sourceIds": [
+        "templates"
+      ]
+    },
+    {
+      "id": "analytical-workbench",
+      "artifacts": [
+        "ui"
+      ],
+      "tasks": [
+        "compare"
+      ],
+      "densities": [
+        "medium",
+        "dense"
+      ],
+      "layout": [
+        "主视区优先安排回答研究问题的图形和明细表，筛选条件及数据范围保持可见。",
+        "标注单位、时间范围、缺失和样本边界；图表与表格使用一致的视觉编码。"
+      ],
+      "avoid": [
+        "不用装饰性指标卡挤掉主要比较信息；非穷尽分类不画总体占比。"
+      ],
+      "sourceIds": [
+        "templates",
+        "styles"
+      ]
+    },
+    {
+      "id": "technical-explainer",
+      "artifacts": [
+        "diagram"
+      ],
+      "tasks": [
+        "understand"
+      ],
+      "densities": [
+        "medium",
+        "dense"
+      ],
+      "layout": [
+        "用有方向的主流程串联机制，异常分支接到实际发生点及其结果。",
+        "让相互排斥的结果与先后顺序清楚可辨；图例和短标签解释关系，不用视觉连线发明依赖。"
+      ],
+      "avoid": [
+        "不把机制图改成营销海报；不为凑版式删掉异常路径。"
+      ],
+      "sourceIds": [
+        "templates"
+      ]
+    },
+    {
+      "id": "editorial-report",
+      "artifacts": [
+        "document"
+      ],
+      "tasks": [
+        "read",
+        "understand"
+      ],
+      "densities": [
+        "medium",
+        "dense"
+      ],
+      "layout": [
+        "以标题、引言、分节和注释建立阅读次序，图表紧邻支撑的论点。",
+        "多页采用一致的字号层级、栏宽和页眉；章节数量由内容决定。"
+      ],
+      "avoid": [
+        "不填充模拟正文、虚构引文或无来源结论。"
+      ],
+      "sourceIds": [
+        "templates"
+      ]
+    },
+    {
+      "id": "brand-landing",
+      "artifacts": [
+        "ui"
+      ],
+      "tasks": [
+        "persuade"
+      ],
+      "densities": [
+        "sparse",
+        "medium"
+      ],
+      "layout": [
+        "首屏说明已证实的价值及实际下一步，后续用已有证据展开内容。",
+        "用清晰排版、留白和真实素材形成品牌识别，交互与证据顺序服从用户任务。"
+      ],
+      "avoid": [
+        "不默认生成客户标志、证言、增长数字或不存在的转化入口。"
+      ],
+      "sourceIds": [
+        "templates",
+        "styles"
+      ]
+    },
+    {
+      "id": "brand-system",
+      "artifacts": [
+        "brand-board"
+      ],
+      "tasks": [
+        "brand"
+      ],
+      "densities": [
+        "sparse",
+        "medium"
+      ],
+      "layout": [
+        "展示同一品牌的字体层级、配色角色、间距和允许的应用变化。",
+        "各应用共享核心标记，区别于互不相关的多套皮肤。"
+      ],
+      "avoid": [
+        "未要求品牌设计时不追加品牌项目；不推定第三方商标或素材可复用。"
+      ],
+      "sourceIds": [
+        "templates",
+        "styles"
+      ]
+    }
+  ]
+}
