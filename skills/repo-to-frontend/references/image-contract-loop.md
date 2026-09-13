@@ -52,3 +52,5 @@ build在源码、样式、脚手架写入前重跑当前图像审查输入，核
 backendCoverage每项 `{requirementId,capabilityId,pageId,selector,verification:文件证据}`；verification是实际执行的验证JSON，含 `{status:'PASS',requirementId,capabilityId,pageId,selector,implementationDigest,imageAuditDigest,integration}`。implementationDigest遵循reference-fidelity.md，imageAuditDigest等于当前图像审查结果inputDigest，要求改变必须重跑前端验证；integration明确MOCK/LIVE/STATIC及真实联调限制，不因mock给真实联调PASS。验证必须检查实际UI内容/请求/结果而非仅存在选择器。汇总器读取报告状态和代码绑定；不能补造报告、把图像通过当成前端已实现。visual-only用于本来没有后端契约的任务，不能给产品前端降级绕过门槛。
 
 来自状态板的backendCoverage行和verification JSON均另外包含 `fragmentId,regionId,target`，与当前图审导出的要求映射完全对应；verification还需 `fragmentDigest,referenceDigest,screenshotSha256`，分别绑定该片段完整声明、最终物理参考集和该片段的原始实际截图。原 `pageId` 继续保留物理参考id，不能偷换为目标真实路由，真实页面/状态写入target。最终汇总器核对两侧状态板声明、要求覆盖、逐片段实际采集与六维审查；原backend验证字段与MOCK/LIVE边界仍全部执行。仅图审READY不能代替片段交付，整体PASS也不能盖过片段FAIL。
+
+3.4新设计使用 [共享设计包](visual-package.md) 时，输入同时提供visualPackage文件证据对。图审逐图核generation.request的实际prompt及引用；交付核同版包。省略字段只兼容既有未采用包的任务，不允许删掉有问题的包来绕过新流程。

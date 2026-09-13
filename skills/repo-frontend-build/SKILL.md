@@ -5,7 +5,7 @@ description: "Use when the user wants frontend reconstruction from supplied or g
 
 # 前端复刻
 
-版本：3.3。可单独调用，也可由 $repo-to-frontend 编排。
+版本：3.4。可单独调用，也可由 $repo-to-frontend 编排。
 
 先读 [共享约束](../repo-to-frontend/references/stage-common.md) 和 [交接与图片审核](../repo-to-frontend/references/stage-handoff.md)。仅依赖同级repo-to-frontend共享资源，不需要读取或执行总入口的其他阶段。安装时须配套该共享目录；缺失时明确报告，不能绕过审核或另造规则。
 
@@ -49,3 +49,5 @@ description: "Use when the user wants frontend reconstruction from supplied or g
 完成本阶段必要自验后检查继承的independentReview设置；开启时按[独立子代理审查](../repo-to-frontend/references/independent-review.md)冻结产物并派发全新上下文，只返回问题/结论/证据。未决阻断问题或过期审查不能交接受影响产物；关闭只省去子代理，不省去本阶段自验。未选阶段不自动补跑，已有图片审核仍单独遵守。
 
 视觉配方仅用于上游新设计；本阶段遵循最终参考及合同，不因配方或目录升级重新选风格。边界见 [视觉结构选型](../repo-to-frontend/references/visual-direction.md)。
+
+消费共享设计包时先核当前性及图审同版，按最终图将真实文字、数据图形、交互和素材分别实现；不把配方当新设计授权。见 [完整设计包交接](../repo-to-frontend/references/visual-package.md)。

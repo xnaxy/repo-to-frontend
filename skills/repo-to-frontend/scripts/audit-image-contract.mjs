@@ -3,41 +3,14 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readVisualPackage, validateGenerationRequest } from './prepare-visual-package.mjs';
 
 export const digest = value => createHash('sha256').update(value).digest('hex');
-export const imageReviewContext = input => digest(JSON.stringify({contractSha256:input?.contract?.sha256,styleAnchorSha256:input?.styleAnchor?.sha256,styleInstructions:input?.styleInstructions}));
+export const imageReviewContext = input => digest(JSON.stringify({contractSha256:input?.contract?.sha256,styleAnchorSha256:input?.styleAnchor?.sha256,styleInstructions:input?.styleInstructions,...(input?.visualPackage ? {visualPackageSha256:input.visualPackage.output?.sha256} : {})}));
 const array = value => Array.isArray(value) ? value : [];
 const text = value => typeof value === 'string' && value.trim().length > 0;
-const positive = value => Number.isFinite(value) && value > 0;
-const names = value => Array.isArray(value) && value.length > 0 && value.every(text) && new Set(value).size === value.length;
-export const stateSheetDeclaration = value => value?.kind === 'state-sheet' ? { kind: value.kind, imageSize: value.imageSize, fragments: value.fragments } : null;
-export const validRect = (rect, size) => rect && size && ['x', 'y', 'width', 'height'].every(key => Number.isInteger(rect[key])) && rect.x >= 0 && rect.y >= 0 && rect.width > 0 && rect.height > 0 && rect.x + rect.width <= size.width && rect.y + rect.height <= size.height;
-
-// A state sheet is a physical design image, never a new product route. The
-// contract inventories its excerpts before any final screenshot is inspected.
-export function validateStateSheet(value, block, requirementIds) {
-  if (value?.kind !== 'state-sheet') {
-    if ((value?.kind !== undefined && value.kind !== 'page') || value?.fragments !== undefined) block('INVALID_REFERENCE_KIND', value?.id);
-    return;
-  }
-  const fragments = array(value.fragments), size = value.imageSize;
-  if (!size || !Number.isInteger(size.width) || !Number.isInteger(size.height) || !positive(size.width) || !positive(size.height)) block('INVALID_SHEET_SIZE', value.id);
-  if (!names(fragments.map(fragment => fragment?.id))) block('INVALID_FRAGMENT_IDS', value.id);
-  const mapped = [];
-  for (const fragment of fragments) {
-    const id = `${value.id}/${fragment?.id}`, target = fragment?.target, viewport = target?.viewport;
-    if (!validRect(fragment?.sourceRect, size)) block('INVALID_SOURCE_RECT', id);
-    if (!text(target?.pageId) || target.pageId === value.id || !text(target?.stateId) || !viewport || !Number.isInteger(viewport.width) || !Number.isInteger(viewport.height) || !positive(viewport.width) || !positive(viewport.height) || !positive(viewport.deviceScaleFactor)) block('INVALID_FRAGMENT_TARGET', id);
-    if (!names(fragment?.regions)) block('MISSING_REGION_INVENTORY', id);
-    if (!names(fragment?.requirementIds)) block('INVALID_FRAGMENT_REQUIREMENTS', id);
-    mapped.push(...array(fragment?.requirementIds));
-  }
-  if (new Set(mapped).size !== mapped.length || (requirementIds && (mapped.length !== requirementIds.length || mapped.some(id => !requirementIds.includes(id))))) block('FRAGMENT_REQUIREMENT_COVERAGE', value.id);
-  for (let i = 0; i < fragments.length; i++) for (let j = i + 1; j < fragments.length; j++) {
-    const a = fragments[i]?.sourceRect, b = fragments[j]?.sourceRect;
-    if (validRect(a, size) && validRect(b, size) && a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height) block('OVERLAPPING_SOURCE_RECTS', `${value.id}/${fragments[i].id}/${fragments[j].id}`);
-  }
-}
+import { stateSheetDeclaration, validateStateSheet, validRect } from './state-sheet-contract.mjs';
+export { stateSheetDeclaration, validateStateSheet, validRect } from './state-sheet-contract.mjs';
 export function auditImageContract(input, read = path => readFileSync(path)) {
   const blockers = [], issues = [], requirements = [];
   const block = (code, id = '') => blockers.push({ code, id });
@@ -51,6 +24,13 @@ export function auditImageContract(input, read = path => readFileSync(path)) {
     if (ids.some(id => !text(id)) || new Set(ids).size !== ids.length) block('INVALID_IDS', label);
   };
   if (input?.schemaVersion !== 1) block('INVALID_SCHEMA');
+  let visualPackage;
+  if (input && Object.hasOwn(input, 'visualPackage')) {
+    try {
+      visualPackage = readVisualPackage(input.visualPackage, read).output;
+      if (visualPackage.scope !== 'backend-product' || visualPackage.contractSha256 !== input.contract?.sha256 || visualPackage.styleInstructions !== input.styleInstructions) block('VISUAL_PACKAGE_CONTRACT_MISMATCH');
+    } catch { block('VISUAL_PACKAGE_NOT_CURRENT'); }
+  }
   const bytes = checkFile(input?.contract, 'contract');
   let contract = {};
   if (bytes) { try { contract = JSON.parse(bytes.toString('utf8').replace(/^\uFEFF/, '')); } catch { block('INVALID_CONTRACT'); } }
@@ -80,6 +60,12 @@ export function auditImageContract(input, read = path => readFileSync(path)) {
     const image = images.find(value => value.id === page.id);
     if (!image) { issue(page.id, 'MISSING_IMAGE', '生成本页面/状态的独立参考图'); continue; }
     checkFile(image.image, `image:${page.id}`); checkFile(image.review, `review:${page.id}`);
+    if (visualPackage) {
+      try {
+        const planned = visualPackage.pages.find(p => p.id === page.id);
+        validateGenerationRequest(planned, image.generation, read);
+      } catch { block('INVALID_GENERATION_BINDING', page.id); }
+    }
     if (image.reviewedImageSha256 !== image.image?.sha256 || image.inventoryComplete !== true || image.viewed !== true) block('INCOMPLETE_IMAGE_REVIEW', page.id);
     if (image.reviewContextDigest !== imageReviewContext(input)) block('STALE_REVIEW_CONTEXT', page.id);
     if (image.styleStatus === 'DRIFT') issue(page.id, 'STYLE_DRIFT', input.styleInstructions, image.styleObserved ?? '');

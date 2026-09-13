@@ -5,7 +5,7 @@ description: "Use when the user wants an end-to-end or selected-stage repository
 
 # 仓库到前端：总入口
 
-工作流版本：3.3。总入口负责选阶段、版本交接、图片审核和可选独立子代理审查；详细执行内容已拆到五个独立Skill。共享引用、脚本与素材继续由本目录维护，保留3.0项目准确性及2.9视觉能力，不复制成五套规则。
+工作流版本：3.4。总入口负责选阶段、版本交接、图片审核和可选独立子代理审查；详细执行内容已拆到五个独立Skill。共享引用、脚本与素材继续由本目录维护，保留3.0项目准确性及2.9视觉能力，不复制成五套规则。
 
 先读 [共享约束](references/stage-common.md) 和 [交接与图片审核](references/stage-handoff.md)。只加载本次需要的阶段入口及其相关引用，不把全部阶段重新塞入上下文。总入口和阶段入口可分别调用，阶段入口依赖本目录的共享资源；六个目录配套安装。
 
@@ -51,3 +51,5 @@ description: "Use when the user wants an end-to-end or selected-stage repository
 - `$repo-frontend-build 继续当前版本，关闭独立子代理审查。`（不改变图片审核设置。）
 
 这里的阶段选择和审核开关是自然语言Skill配置，不是新增应用设置或后台自动运行服务。
+
+新设计按共享设计包贯穿事实、选型、逐图实际prompt、最终参考与交付；run-state合并保存包证据，不改变所选阶段及审核继承。见 [完整设计包交接](references/visual-package.md)。

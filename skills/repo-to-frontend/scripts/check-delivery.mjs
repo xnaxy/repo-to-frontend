@@ -5,11 +5,17 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createInputBinding } from './verify-replica.mjs';
 import { auditImageContract, stateSheetDeclaration, validateStateSheet, validRect } from './audit-image-contract.mjs';
+import { readVisualPackage, validateGenerationRequest } from './prepare-visual-package.mjs';
 
 const sha = value => createHash('sha256').update(value).digest('hex');
 const list = value => Array.isArray(value) ? value : [];
 const dimensions = ['state', 'coverage', 'structure', 'content', 'appearance', 'interaction'];
 const sameTarget = (a, b) => a && b && a.pageId === b.pageId && a.stateId === b.stateId && ['width', 'height', 'deviceScaleFactor'].every(key => a.viewport?.[key] === b.viewport?.[key]);
+
+// Preserve legacy bytes for tasks without a package; adopted packages bind reviews.
+export const deliveryReferenceDigest = input => sha(JSON.stringify(Object.hasOwn(input ?? {}, 'visualPackage')
+  ? {references:list(input?.references),visualPackage:input.visualPackage}
+  : list(input?.references)));
 
 // This aggregates evidence; it does not independently judge images or authenticate user messages.
 export function checkDelivery(input, read = path => readFileSync(path)) {
@@ -35,6 +41,13 @@ export function checkDelivery(input, read = path => readFileSync(path)) {
   };
   if (!input || input.schemaVersion !== 1) block('INVALID_SCHEMA');
   const refs = list(input?.references), pages = list(input?.pages);
+  let visualPackage;
+  if (input && Object.hasOwn(input, 'visualPackage')) {
+    try {
+      visualPackage = readVisualPackage(input.visualPackage, read).output;
+      if (visualPackage.scope !== input.scope || visualPackage.pages.length !== refs.length || visualPackage.pages.some(p => !refs.some(r => r.id === p.id))) block('VISUAL_PACKAGE_SCOPE_MISMATCH');
+    } catch { block('VISUAL_PACKAGE_NOT_CURRENT'); }
+  }
   if (!refs.length) block('NO_REFERENCE_SCOPE');
   const ids = refs.map(ref => ref.id);
   if (ids.some(id => typeof id !== 'string' || !id) || new Set(ids).size !== ids.length) block('INVALID_REFERENCE_IDS');
@@ -49,14 +62,23 @@ export function checkDelivery(input, read = path => readFileSync(path)) {
     if (authority?.actor !== 'user' || authority?.explicitLayoutChange !== true || !authority?.quote?.trim()) block('UNAUTHORIZED_MODE_CHANGE');
     evidence(authority?.evidence, 'layout-change');
   }
-  const referenceDigest = sha(JSON.stringify(refs));
+  const referenceDigest = deliveryReferenceDigest(input);
   const implementationDigest = sha(JSON.stringify(implementation));
   if (!['visual-only','backend-product'].includes(input?.scope)) block('MISSING_DELIVERY_SCOPE');
+  if (visualPackage && input.scope === 'visual-only') {
+    for (const ref of refs) {
+      try { validateGenerationRequest(visualPackage.pages.find(p=>p.id===ref.id),ref.generation,read); }
+      catch { block('INVALID_GENERATION_BINDING',ref.id); }
+    }
+  }
   if (input?.scope === 'backend-product') {
     const valid = [evidence(input.imageAudit?.input,'image-audit-input'), evidence(input.imageAudit?.result,'image-audit-result')].every(Boolean);
     if (valid) {
       try {
         const auditInput = parse(input.imageAudit.input), saved = parse(input.imageAudit.result), current = auditImageContract(auditInput,read);
+        if (auditInput.visualPackage || input.visualPackage) {
+          if (!visualPackage || auditInput.visualPackage?.input?.sha256 !== input.visualPackage?.input?.sha256 || auditInput.visualPackage?.output?.sha256 !== input.visualPackage?.output?.sha256) block('VISUAL_PACKAGE_AUDIT_MISMATCH');
+        }
         if (current.status !== 'READY_FOR_REPLICA' || saved.status !== 'READY_FOR_REPLICA' || saved.inputDigest !== current.inputDigest) block('IMAGE_CONTRACT_NOT_READY');
         if (current.images.length !== refs.length || current.images.some(image => !refs.some(ref => ref.id === image.id && ref.image.sha256 === image.image?.sha256))) block('IMAGE_SET_MISMATCH');
         for (const image of current.images) {

@@ -83,3 +83,7 @@ actualRect: {x,y,width,height}
 退出0=`PASS_SCOPED`：仅输入范围达标；退出1=`FAIL`：存在差异；退出2=`BLOCKED`：缺证据/状态不等价/过期/模式授权缺失。后两者均不得写视觉完成或将选中build/verify标完成。测试、安装、HTTP成功、代理通过分别报告，不能覆盖此状态。声明用户接受仍需用户实际接受；没有参考的响应式与业务状态另报功能验证。
 
 Skill优化的有效性按 skill-transfer-validation.md 用同条件新上下文前向对照检验，不能把这个汇总器抓错能力称为复刻质量提升。
+
+3.4新设计使用 [共享设计包](visual-package.md) 时，输入同时提供visualPackage文件证据对。图审逐图核generation.request的实际prompt及引用；交付核同版包。省略字段只兼容既有未采用包的任务，不允许删掉有问题的包来绕过新流程。
+
+采用visualPackage时referenceDigest按共享设计包说明使用deliveryReferenceDigest(input)，同时绑定包与参考；无包旧公式保持兼容。采集和逐片段review不可继续手算旧摘要。

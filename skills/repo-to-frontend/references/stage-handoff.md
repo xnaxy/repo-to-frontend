@@ -31,7 +31,7 @@ build/verify交接还须遵循[按图实现合同](reference-fidelity.md)。图�
 
 ```json
 {
-  "workflowVersion": "3.2",
+  "workflowVersion": "3.4",
   "selectedStages": ["image", "build", "verify"],
   "independentReview": {
     "enabled": false,
@@ -51,3 +51,5 @@ build/verify交接还须遵循[按图实现合同](reference-fidelity.md)。图�
 ```
 
 开启且status不是approved、摘要不匹配或缺少可追溯用户同意时，一律不能开始build；修复状态并取得同意，不用伪填approved消除阻塞。关闭开关是用户明确改变设置，与批准某张图片分别记账。
+
+新设计的visualPackage证据按 [共享设计包](visual-package.md) 合并保存；包版本变化先核受影响prompt/图审及合同，再执行本协议的批准失效规则。CURRENT不改变任何阶段或用户批准状态。
